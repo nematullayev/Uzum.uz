@@ -38,8 +38,45 @@ let uzum = [
     oldValue: "4 900 000",
     bargainValue: "4 849 000 s'om",
   },
+  {
+    id: 5,
+    img: "./assets/images/sams.png",
+    title: "Samsung Galaxy S10+ Q8/256 Awesome Navy Smartfoni",
+    score: "5.0 (22 ta sharh)",
+    inMonth: "408 216 s'om/oyiga",
+    oldValue: "4 900 000",
+    bargainValue: "4 849 000 s'om",
+  },
+  {
+    id: 6,
+    img: "./assets/images/sams.png",
+    title: "Samsung Galaxy S10+ Q8/256 Awesome Navy Smartfoni",
+    score: "5.0 (22 ta sharh)",
+    inMonth: "408 216 s'om/oyiga",
+    oldValue: "4 900 000",
+    bargainValue: "4 849 000 s'om",
+  },
+  {
+    id: 7,
+    img: "./assets/images/sams.png",
+    title: "Samsung Galaxy S10+ Q8/256 Awesome Navy Smartfoni",
+    score: "5.0 (22 ta sharh)",
+    inMonth: "408 216 s'om/oyiga",
+    oldValue: "4 900 000",
+    bargainValue: "4 849 000 s'om",
+  },
+  {
+    id: 8,
+    img: "./assets/images/sams.png",
+    title: "Samsung Galaxy S10+ Q8/256 Awesome Navy Smartfoni",
+    score: "5.0 (22 ta sharh)",
+    inMonth: "408 216 s'om/oyiga",
+    oldValue: "4 900 000",
+    bargainValue: "4 849 000 s'om",
+  },
 ];
 const elWrapper = getElement(".hero");
+const template = getElement("template");
 
 function createCards(items) {
   elWrapper.textContent = null;
@@ -64,4 +101,4 @@ function createCards(items) {
     console.log(newEl);
   });
 }
-createCards();
+createCards(uzum);

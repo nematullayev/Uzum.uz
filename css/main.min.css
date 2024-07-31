@@ -111,7 +111,8 @@ a {
 .hero {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 35px;
+  justify-content: center;
   align-items: center;
 }
 .hero__one-center-img {
