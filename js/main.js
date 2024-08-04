@@ -183,32 +183,33 @@ function createIsFavorite(items, where) {
   });
 }
 
-const newID = uzum.length - 1;
-
-const addNewProduct = [
-  {
-    id: newID + 1,
-    img: "",
-    title: "",
-    score: "",
-    inMonth: "",
-    oldValue: "",
-    bargainValue: "",
-    heartIsFavorite: false,
-  },
-];
-
 addSave.addEventListener("click", () => {
-  for (let i = 0; i < addNewProduct.length; i++) {
-    addNewProduct[i].img = addImg.value;
-    addNewProduct[i].title = addTitle.value;
-    addNewProduct[i].score = addRaiting.value;
-    addNewProduct[i].inMonth = addValInMonth.value;
-    addNewProduct[i].oldValue = addOldVal.value;
-    addNewProduct[i].bargainValue = addDiscauontVal.value;
+  // Get values from input fields
+  const imgValue = addImg.value;
+  const titleValue = addTitle.value;
+  const scoreValue = addRaiting.value;
+  const inMonthValue = addValInMonth.value;
+  const oldValue = addOldVal.value;
+  const bargainValue = addDiscauontVal.value;
 
-    uzum.push(addNewProduct[i]);
-  }
+  // Generate new ID
+  const newID = uzum.length;
+
+  const addNewProduct = {
+    id: newID + 1,
+    img: imgValue,
+    title: titleValue,
+    score: scoreValue,
+    inMonth: inMonthValue,
+    oldValue: oldValue,
+    bargainValue: bargainValue,
+    heartIsFavorite: false,
+  };
+  uzum.push(addNewProduct);
+
+  // Add the new product to the array
+
+  // Clear the input fields
   addImg.value = "";
   addTitle.value = "";
   addRaiting.value = "";
@@ -216,8 +217,9 @@ addSave.addEventListener("click", () => {
   addOldVal.value = "";
   addDiscauontVal.value = "";
 
+  // Create and display the updated cards
   createCards(uzum);
-  console.log(uzum.push(addNewProduct));
+  console.log(uzum);
 });
 
 let arr = [];
