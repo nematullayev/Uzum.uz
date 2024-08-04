@@ -4,8 +4,14 @@
   gap: 35px;
   justify-content: center;
   align-items: center;
+  margin-bottom: 100px;
+
   &__one-center-img {
     width: 200px;
+  }
+  &__one-center-img:hover {
+    transition: all 0.2s linear;
+    transform: scale(1.09);
   }
   &__one-bootom-img {
     width: 30px;
@@ -15,38 +21,99 @@
 
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
   }
+  // &__card:hover {
+  //   // transition: all 0.2s linear;
+  //   // transform: scale(1.05);
+  //   // cursor: pointer;
+  // }
   &__one-top {
     position: relative;
     padding: 30px 20px;
-    border-radius: 10px;
-    background-color: #ccc;
+    border-radius: 8px;
+    background-color: #efefef;
+  }
+  &__one-top-botom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  &__one-top-botom-btn {
+    padding: 4px 8px;
+    background-color: #7000ff;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
   }
   &__one-second-center1 {
     display: flex;
-    align-items: end;
+    align-items: start;
     gap: 10px;
+  }
+  &__one-center-title {
+    font-size: 16px;
+    color: #3b3c41;
+    font-size: 16px;
   }
   &__one-second-center-p {
     padding: 2px 4px;
     background-color: yellow;
     border-radius: 3px;
     width: fit-content;
-    margin-top: 5px;
+    margin-top: 9px;
+  }
+  &__one-second-center1-p {
+    color: #afb1b9;
   }
   &__one-bootom-sum {
     text-decoration: line-through;
-    color: #ccc;
+    color: #a0a3ac;
   }
   &__one-bootom {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+  &__one-top-img {
+    z-index: 1;
+    width: 25px;
+  }
+  &__one-bootom-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+}
+.title {
+  display: flex;
+  align-items: center;
+  grid-area: 10px;
+  margin-bottom: 21px;
 }
 #heart {
   position: absolute;
   top: 8px;
   right: 8px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .hero {
+    flex-wrap: wrap;
+  }
+}
+@media only screen and (max-width: 574px) {
+  .hero {
+    gap: 10px;
+  }
+  .hero__card {
+    transition: none;
+    margin-top: 10px;
+    width: 150px;
+    height: 550px;
+  }
+  .hero__one-center-img {
+    width: 100px;
+  }
 }

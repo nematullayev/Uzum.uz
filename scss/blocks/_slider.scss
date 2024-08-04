@@ -1,0 +1,25 @@
+.slider {
+  margin-bottom: 48px;
+  &__img {
+    position: relative;
+    width: 100%;
+  }
+  &__img-left {
+    position: absolute;
+    top: 45%;
+    left: 11%;
+  }
+  &__img-arrow-right {
+    position: absolute;
+    top: 45%;
+    right: 11%;
+  }
+}
+@media only screen and (max-width: 660px) {
+  .slider__img-arrow-right,
+  .slider__img-left,
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+  }
+}

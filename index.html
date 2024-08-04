@@ -3,27 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./css/main.min.css" />
-    <title>Uzum.uz</title>
+    <title>Uzum Market</title>
     <link
       class="fav"
       rel="shortcut icon"
-      href="./assets/images/uzum-favicon.png"
+      href="./assets/images/uzum-favicon.svg"
       type="image/x-icon"
     />
   </head>
   <body>
     <div class="container">
+      <section class="about"></section>
       <header class="header">
         <div class="header__top">
           <div class="header__top-img">
-            <img src="./assets/images/uzumLogo.svg" alt="Uzum-logo" />
+            <img
+              class="logo"
+              src="./assets/images/uzumLogo.svg"
+              alt="Uzum-logo"
+            />
           </div>
           <div class="header__top-btn-inp">
             <button id="btn" class="header__top-btn">
               <img
                 style="width: 25px"
-                src="./assets/images/archive.png"
+                src="./assets/images/catalog.svg"
                 alt="Achaive"
               />
               <p>Katalog</p>
@@ -40,86 +55,463 @@
               </button>
             </div>
           </div>
+
           <div class="header__top-end">
             <ul class="header__top-end-list">
-              <li id="li1" class="header__top-end-item">
-                <img
-                  class="header__top-end-item-img"
-                  src="./assets/images/person.svg"
-                  alt="person"
-                />
-                <p>Kirish</p>
+              <li id="li1">
+                <button class="header__top-end-item">
+                  <img
+                    class="header__top-end-item-img"
+                    src="./assets/images/person.svg"
+                    alt="person"
+                  />
+                  <p>Kirish</p>
+                </button>
               </li>
-              <li id="li2" class="header__top-end-item">
-                <img
-                  class="header__top-end-item-img"
-                  src="./assets/images/heart.svg"
-                  alt="ask"
-                />
-                <p>Soralgan</p>
+              <li id="li2">
+                <button class="header__top-end-item">
+                  <img
+                    class="header__top-end-item-img"
+                    src="./assets/images/heart.svg"
+                    alt="ask"
+                  />
+                  <p>Soralgan</p>
+                </button>
               </li>
-              <li id="li3" class="header__top-end-item">
-                <img
-                  class="header__top-end-item-img"
-                  src="./assets/images/bag-dash.svg"
-                  alt="basket"
-                />
-                <p>Savat</p>
+              <li id="li3">
+                <button class="header__top-end-item">
+                  <img
+                    class="header__top-end-item-img"
+                    src="./assets/images/bag-dash.svg"
+                    alt="basket"
+                  />
+                  <p>Savat</p>
+                </button>
               </li>
             </ul>
           </div>
         </div>
-        <section class="hero">
-          <template
-            ><div class="hero__card">
-              <div class="hero__one-top">
-                <div class="hero__one-top-2">
+        <div class="header__mobile-inp">
+          <input
+            class="header__top-inp2"
+            type="text"
+            id="inp"
+            placeholder="Mahsulotlar va turkumlar izlash  "
+          />
+          <button id="header__mobile-btn">
+            <img src="./assets/images/search.svg" alt="search" />
+          </button>
+        </div>
+        <div class="header__bottom swiper">
+          <ul class="header__bottom-list">
+            <div class="header__bottom-slide swiper-wrapper">
+              <li class="header__bottom-item">
+                <button
+                  id="header__bottom-item-btn"
+                  class="header__bottom-item-btn swiper-slide"
+                >
                   <img
-                    id="heart"
-                    class="hero__one-top-img"
-                    src="./assets/images/heart.svg"
-                    alt="1"
-                  />
+                    class="header__bottom-item-img"
+                    src="https://static.uzum.uz/fast_categories/lic.png"
+                    alt="Likvidatsiya"
+                  />Likvidatsiya
+                </button>
+              </li>
+              <li class="header__bottom-item">
+                <button
+                  id="header__bottom-item-btn"
+                  class="header__bottom-item-btn swiper-slide"
+                >
                   <img
-                    class="hero__one-center-img"
-                    src="./assets/images/sams.png"
-                    alt=""
-                  />
-                </div>
-              </div>
-              <div class="hero__one-center">
-                <h3 class="hero__one-center-title">
-                  Samsung Galaxy S10+ Q8/256 Awesome Navy Smartfoni
-                </h3>
-              </div>
-              <div class="hero__one-second-center">
-                <div class="hero__one-second-center1">
-                  <img src="./assets/images/star-fill.svg" alt="" />
-
-                  <p class="hero__one-second-center1-p">5.0 (22 ta sharh)</p>
-                </div>
-                <div class="hero__one-second-center2">
-                  <p class="hero__one-second-center-p">408 216 s'om/oyiga</p>
-                </div>
-              </div>
-              <div class="hero__one-bootom">
-                <div>
-                  <p class="hero__one-bootom-sum">4 900 000</p>
-                  <h3 class="hero__one-bootom-title">4 849 000 s'om</h3>
-                </div>
-                <div>
+                    class="header__bottom-item-img"
+                    src="https://static.uzum.uz/fast_categories/%D0%A7%D0%B8%D0%BB%D0%BB%D1%8F.png"
+                    alt="2"
+                  />Yozgi savdo
+                </button>
+              </li>
+              <li class="header__bottom-item">
+                <button
+                  id="header__bottom-item-btn "
+                  class="header__bottom-item-btn swiper-slide"
+                >
                   <img
-                    class="hero__one-bootom-img"
-                    src="./assets/images/add-to-cart-icon.svg"
-                    alt=""
+                    class="header__bottom-item-img"
+                    src="https://static.uzum.uz/fast_categories/nasiya_fc.png"
+                    alt="3"
+                  />Nasiya
+                </button>
+              </li>
+              <li class="header__bottom-item">
+                <button
+                  id="header__bottom-item-btn "
+                  class="header__bottom-item-btn swiper-slide"
+                >
+                  <img
+                    class="header__bottom-item-img"
+                    src="https://static.uzum.uz/fast_categories/auto_products.png"
+                    alt="4"
+                  />Hammasi avto uchun
+                </button>
+              </li>
+            </div>
+            <div class="header__bottom-slide2">
+              <li class="header__bottom-item">
+                <button
+                  style="color: #74767e"
+                  id="header__bottom-item-btn"
+                  class="header__bottom-item-btn swiper-slide"
+                >
+                  <p>Elektronika</p>
+                </button>
+              </li>
+              <li class="header__bottom-item">
+                <button
+                  style="color: #74767e"
+                  id="header__bottom-item-btn"
+                  class="header__bottom-item-btn swiper-slide"
+                >
+                  <p>Mashiy</p>
+                  <p>Tehnika</p>
+                </button>
+              </li>
+              <li class="header__bottom-item">
+                <button
+                  style="color: #74767e"
+                  id="header__bottom-item-btn"
+                  class="header__bottom-item-btn swiper-slide"
+                >
+                  <p>Kiyim</p>
+                </button>
+              </li>
+              <li class="header__bottom-item">
+                <button
+                  style="color: #74767e"
+                  id="header__bottom-item-btn"
+                  class="header__bottom-item-btn swiper-slide"
+                >
+                  <p>Poyabzal</p>
+                </button>
+              </li>
+              <li class="header__bottom-item">
+                <button
+                  style="color: #74767e"
+                  id="header__bottom-item-btn"
+                  class="header__bottom-item-btn swiper-slide"
+                >
+                  <p>Aksessuarlar</p>
+                </button>
+              </li>
+              <!-- <li class="header__bottom-item">
+                <button
+                  style="color: #74767e"
+                  id="header__bottom-item-btn"
+                  class="header__bottom-item-btn swiper-slide"
+                >
+                  <p>G'ozalik</p>
+                  <span>va</span>
+                  <span>parvarish</span>
+                </button>
+              </li> -->
+              <li class="header__bottom-item">
+                <button
+                  style="color: #74767e"
+                  id="header__bottom-item-btn"
+                  class="header__bottom-item-btn swiper-slide"
+                >
+                  <p>Yana</p>
+                  <img
+                    src="./assets/images/arrov-botom.svg"
+                    alt="arrov-botom"
                   />
-                </div>
-              </div></div
-          ></template>
-        </section>
-        <div class="header__bottom"></div>
+                </button>
+              </li>
+            </div>
+          </ul>
+        </div>
       </header>
+      <section class="slider swiper">
+        <div class="slider__all">
+          <div class="slider-list swiper-wrapper">
+            <div class="slider__first swiper-slide">
+              <img
+                class="slider__img"
+                src="./assets/images/sloder1.png"
+                alt="Slider"
+              />
+            </div>
+            <div class="slider__second swiper-slide">
+              <img
+                class="slider__img"
+                src="./assets/images/slider2.png"
+                alt="Slider"
+              />
+            </div>
+            <div class="slider__four swiper-slide">
+              <img
+                class="slider__img"
+                src="./assets/images/slider3.png"
+                alt="Slider"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </section>
+      <div class="title">
+        <h1>Arzon narxlar</h1>
+        <img src="./assets/images/arrow.svg" alt="" />
+      </div>
+      <section class="hero">
+        <template
+          ><div class="hero__card">
+            <div class="hero__one-top">
+              <div class="hero__one-top-2">
+                <img
+                  id="heart"
+                  class="hero__one-top-img"
+                  src="./assets/images/heart.svg"
+                  alt="1"
+                />
+                <img
+                  class="hero__one-center-img"
+                  src="./assets/images/sams.png"
+                  alt=""
+                />
+              </div>
+              <div class="hero__one-top-botom">
+                <button id="catigories-card" class="hero__one-top-botom-btn">
+                  Eksklyuziv
+                </button>
+              </div>
+            </div>
+            <div class="hero__one-center">
+              <p class="hero__one-center-title">
+                Samsung Galaxy S10+ Q8/256 Awesome Navy Smartfoni
+              </p>
+            </div>
+            <div class="hero__one-second-center">
+              <div class="hero__one-second-center1">
+                <img src="./assets/images/star-fill.svg" alt="" />
+
+                <p class="hero__one-second-center1-p">5.0 (22 ta sharh)</p>
+              </div>
+              <div class="hero__one-second-center2">
+                <p class="hero__one-second-center-p">408 216 s'om/oyiga</p>
+              </div>
+            </div>
+            <div class="hero__one-bootom">
+              <div>
+                <p class="hero__one-bootom-sum">4 900 000</p>
+                <h3 class="hero__one-bootom-title">4 849 000 s'om</h3>
+              </div>
+              <div>
+                <img
+                  class="hero__one-bootom-img"
+                  src="./assets/images/Button.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </template>
+      </section>
+      <section class="add">
+        <!-- Button trigger modal -->
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          Add New Prodact
+        </button>
+
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  Modal title
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <input
+                  id="inp1"
+                  type="text"
+                  class="form-control mb-3"
+                  placeholder="Add image"
+                  aria-label="Username"
+                  aria-describedby="addon-wrapping"
+                />
+                <input
+                  id="inp2"
+                  type="text"
+                  class="form-control mb-3"
+                  placeholder="Add Title"
+                  aria-label="Username"
+                  aria-describedby="addon-wrapping"
+                />
+                <input
+                  id="inp3"
+                  type="text"
+                  class="form-control mb-3"
+                  placeholder="Add rating of prudact"
+                  aria-label="Username"
+                  aria-describedby="addon-wrapping"
+                />
+                <input
+                  id="inp4"
+                  type="text"
+                  class="form-control mb-3"
+                  placeholder="Add value in a month"
+                  aria-label="Username"
+                  aria-describedby="addon-wrapping"
+                />
+                <input
+                  id="inp5"
+                  type="text"
+                  class="form-control mb-3"
+                  placeholder="Add old value"
+                  aria-label="Username"
+                  aria-describedby="addon-wrapping"
+                />
+                <input
+                  id="inp6"
+                  type="text"
+                  class="form-control mb-3"
+                  placeholder="Add discount value"
+                  aria-label="Username"
+                  aria-describedby="addon-wrapping"
+                />
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <!-- <button
+                  id="save"
+                  class="btn btn-primary"
+                  data-bs-dismiss="modal"
+                >
+                  Save changes
+                </button> -->
+                <button
+                  id="save"
+                  class="btn btn-primary"
+                  data-bs-dismiss="modal"
+                >
+                  Save changes
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="footer__first">
+          <h4 class="footer__first-title">Biz haqimizda</h4>
+          <p class="footer__first-text">Topshirish punktlari</p>
+          <p class="footer__first-text2">Vakansiyalar</p>
+        </div>
+        <div class="footer__second">
+          <h4 class="footer__first-title">Foydalanuvchilarga</h4>
+          <p class="footer__first-text2">Biz bilan boglanish</p>
+          <p class="footer__first-text2">Savol-Javob</p>
+        </div>
+        <div class="footer__third">
+          <h4 class="footer__first-title">Tadbirkorlarga</h4>
+          <p class="footer__first-text2">Uzumda soting</p>
+          <p class="footer__first-text2">Sotuvchi kobinetiga kirish</p>
+        </div>
+        <div class="footer__fourth">
+          <h4 class="footer__first-title">Ilivonai yuklab olish</h4>
+          <div class="footer__fourth-links1">
+            <p class="footer__fourth-text">
+              <img
+                class="app1"
+                style="width: 24px"
+                src="./assets/images/app-store.svg"
+                alt=""
+              />
+              <svg
+                class="white-app"
+                style="width: 24px"
+                fill="#fff"
+                width="24px"
+                height="24px"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17.564 13.862c-.413.916-.612 1.325-1.144 2.135-.742 1.13-1.79 2.538-3.087 2.55-1.152.01-1.448-.75-3.013-.741-1.564.008-1.89.755-3.043.744-1.297-.012-2.29-1.283-3.033-2.414-2.077-3.16-2.294-6.87-1.013-8.843.91-1.401 2.347-2.221 3.697-2.221 1.375 0 2.24.754 3.376.754 1.103 0 1.775-.756 3.365-.756 1.2 0 2.474.655 3.381 1.785-2.972 1.629-2.49 5.873.514 7.007zM12.463 3.808c.577-.742 1.016-1.788.857-2.858-.944.065-2.047.665-2.692 1.448-.584.71-1.067 1.763-.88 2.787 1.03.031 2.096-.584 2.715-1.377z"
+                />
+              </svg>
+              App Store
+            </p>
+            <p class="footer__fourth-text">
+              <img src="./assets/images/google-play.svg" alt="" />Google Play
+            </p>
+          </div>
+          <h4 class="footer__fourth-links-title">Uzum ijtimoiy tarmoqlarda</h4>
+          <div class="footer__fourth-links">
+            <img
+              class="footer__fourth-link"
+              src="./assets/images/instagram.png"
+              alt="instagram"
+            />
+            <img
+              class="footer__fourth-link"
+              src="./assets/images/telegram.png"
+              alt="telegram"
+            />
+            <img
+              class="footer__fourth-link"
+              src="./assets/images/youtube.png"
+              alt="youtube"
+            />
+            <img
+              class="footer__fourth-link"
+              src="./assets/images/facebook.png"
+              alt="facebook"
+            />
+          </div>
+        </div>
+      </footer>
+      <div class="footer__end">
+        <h4 class="footer__end-title">Maxfiylik kelishuvi</h4>
+        <h4 class="footer__end-title">Foydalanuvchi kelishuvi</h4>
+        <p class="footer__end-text">
+          «2024© XK MCHJ «UZUM MARKET». STIR 309376127. Barcha huquqlar
+          himoyalangan»
+        </p>
+      </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/slider.js"></script>
     <script src="./js/main.js"></script>
   </body>
 </html>
