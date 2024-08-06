@@ -1,2 +1,48 @@
 .about {
+  padding: 5px 0 5px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__first {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  &__first-one {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  &__first-one-1 {
+    display: flex;
+    align-items: center;
+  }
+  &__first-one-2-text {
+    color: black;
+  }
+  &__secondtext {
+    color: #a5a7b1;
+    margin-bottom: 0;
+  }
+  &__third {
+    display: flex;
+    gap: 20px;
+
+    // align-items: center;
+  }
+  &__third-one {
+    display: flex;
+    gap: 10px;
+  }
+  &__third-text {
+    margin-bottom: 0;
+    color: #595b66;
+  }
+  &__third-text2 {
+    margin-bottom: 0;
+    color: #595b66;
+  }
+}
+.about__wrapper {
+  background-color: #f2f4f7;
 }

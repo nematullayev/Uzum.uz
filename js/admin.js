@@ -102,6 +102,7 @@ const addValInMonth = getElement("#inp4");
 const addOldVal = getElement("#inp5");
 const addDiscauontVal = getElement("#inp6");
 const addSave = document.querySelector("#save");
+const addSaveChanges = document.querySelector("#save-changes");
 
 elSearchInput.addEventListener("change", () => {
   if (elSearchInput.value.length > 0) {
@@ -152,6 +153,7 @@ function createCards(items) {
     bargainValue.textContent = item.bargainValue;
 
     elWrapper.appendChild(newEl);
+    addSaveChanges.dataset.id = item.id;
   });
 }
 createCards(uzum);
@@ -220,6 +222,39 @@ addSave.addEventListener("click", () => {
   localStorage.setItem("products", JSON.stringify(uzum));
   createCards(uzum);
   console.log(uzum);
+});
+
+const changeImg = getElement("#change-val1");
+const changeTitle = getElement("#change-val2");
+const changeRaiting = getElement("#change-val3");
+const changeValInMonth = getElement("#change-val4");
+const changeOldVal = getElement("#change-val5");
+const changediscountVal = getElement("#change-val5");
+
+addSaveChanges.addEventListener("click", (e) => {
+  const id = Number(e.target.dataset.id);
+
+  const product = uzum.filter((product) => product.id === id)[0];
+
+  changeTitle.value = product.title;
+  changeImg.value = product.img;
+  changeOldVal.value = product.oldValue;
+  changediscountVal.value = product.bargainValue;
+  changeValInMonth.value = product.inMonth;
+
+  uzum.forEach((product) => {
+    if (product.id === id) {
+      product.title = changeTitle.value;
+      product.img = changeImg.value;
+      product.oldValue = changeOldVal.value;
+      product.bargainValue = changediscountVal.value;
+      product.inMonth = changeValInMonth.value;
+    }
+
+    elFormEdit.reset();
+  });
+  localStorage.setItem("products", JSON.stringify(uzum));
+  createCards(uzum);
 });
 
 let arr = [];

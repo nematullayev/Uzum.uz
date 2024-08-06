@@ -4,68 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./css/main.min.css" />
-    <title>Uzum Market</title>
-    <link
-      class="fav"
-      rel="shortcut icon"
-      href="./assets/images/uzum-favicon.svg"
-      type="image/x-icon"
-    />
+    <title>Uzum-Admin</title>
   </head>
   <body>
-    <div class="about__wrapper">
-      <section class="about container">
-        <div class="about__first">
-          <div class="about__first-one">
-            <div class="about__first-one-1">
-              <img
-                class="about__first-one-1-img"
-                src="./assets/images/location.svg"
-                alt=""
-              />
-              <p style="margin-bottom: 0">Shahar:</p>
-            </div>
-            <div class="about__first-one-2">
-              <a class="about__first-one-2-text" href="">Toshkent</a>
-            </div>
-          </div>
-          <div class="about__first-second">
-            <p style="margin-bottom: 0" class="about__first-second-text">
-              Topshirish punktlari
-            </p>
-          </div>
-        </div>
-        <div class="about__second">
-          <p class="about__secondtext">
-            Buyurtmangizni 1 kunda bepul yetkazib beramiz!
-          </p>
-        </div>
-        <div class="about__third">
-          <div class="about__third-one">
-            <p class="about__third-text">Savol-javoblar</p>
-            <p class="about__third-text2">Buyurtmalarim</p>
-          </div>
-          <div class="about__third-second">
-            <img
-              class="about__third-second-img"
-              src="./assets/images/uzb-flag.svg"
-              alt="uzb-flag"
-            />
-            <strong class="about__third-second-text">Оʻzbekcha</strong>
-          </div>
-        </div>
-      </section>
-    </div>
     <div class="container">
       <header class="header">
         <div class="header__top">
@@ -244,16 +191,16 @@
                 </button>
               </li>
               <!-- <li class="header__bottom-item">
-                <button
-                  style="color: #74767e"
-                  id="header__bottom-item-btn"
-                  class="header__bottom-item-btn swiper-slide"
-                >
-                  <p>G'ozalik</p>
-                  <span>va</span>
-                  <span>parvarish</span>
-                </button>
-              </li> -->
+                  <button
+                    style="color: #74767e"
+                    id="header__bottom-item-btn"
+                    class="header__bottom-item-btn swiper-slide"
+                  >
+                    <p>G'ozalik</p>
+                    <span>va</span>
+                    <span>parvarish</span>
+                  </button>
+                </li> -->
               <li class="header__bottom-item">
                 <button
                   style="color: #74767e"
@@ -271,41 +218,68 @@
           </ul>
         </div>
       </header>
-      <section class="slider swiper">
-        <div class="slider__all">
-          <div class="slider-list swiper-wrapper">
-            <div class="slider__first swiper-slide">
-              <img
-                class="slider__img"
-                src="./assets/images/sloder1.png"
-                alt="Slider"
-              />
-            </div>
-            <div class="slider__second swiper-slide">
-              <img
-                class="slider__img"
-                src="./assets/images/slider2.png"
-                alt="Slider"
-              />
-            </div>
-            <div class="slider__four swiper-slide">
-              <img
-                class="slider__img"
-                src="./assets/images/slider3.png"
-                alt="Slider"
-              />
-            </div>
-          </div>
-        </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+      <section class="add">
+        <h2>Create New Product</h2>
+        <form action="">
+          <input
+            id="inp1"
+            type="text"
+            class="form-control mb-3"
+            placeholder="Add image"
+            aria-label="Username"
+            aria-describedby="addon-wrapping"
+          />
+          <input
+            id="inp2"
+            type="text"
+            class="form-control mb-3"
+            placeholder="Add Title"
+            aria-label="Username"
+            aria-describedby="addon-wrapping"
+          />
+          <input
+            id="inp3"
+            type="text"
+            class="form-control mb-3"
+            placeholder="Add rating of prudact"
+            aria-label="Username"
+            aria-describedby="addon-wrapping"
+          />
+          <input
+            id="inp4"
+            type="text"
+            class="form-control mb-3"
+            placeholder="Add value in a month"
+            aria-label="Username"
+            aria-describedby="addon-wrapping"
+          />
+          <input
+            id="inp5"
+            type="text"
+            class="form-control mb-3"
+            placeholder="Add old value"
+            aria-label="Username"
+            aria-describedby="addon-wrapping"
+          />
+          <input
+            id="inp6"
+            type="text"
+            class="form-control mb-3"
+            placeholder="Add discount value"
+            aria-label="Username"
+            aria-describedby="addon-wrapping"
+          />
+          <button
+            id="save"
+            style="border: none; padding: 5px 30px; border-radius: 10px"
+            name="save"
+            class="bg-info text-light"
+          >
+            Save
+          </button>
+        </form>
       </section>
-      <div class="title">
-        <h1>Arzon narxlar</h1>
-        <img src="./assets/images/arrow.svg" alt="" />
-      </div>
-      <section class="hero">
+      <section class="hero container">
         <template
           ><div class="hero__card">
             <div class="hero__one-top">
@@ -356,20 +330,37 @@
                 />
               </div>
             </div>
+            <div
+              id="e-d"
+              style="
+                display: flex;
+                gap: 10px;
+                justify-content: center;
+                margin-top: 20px;
+              "
+              class=""
+            >
+              <button
+                id="edit-btn"
+                style="border: none; padding: 5px 15px"
+                class="bg-info text-light"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                Edit
+              </button>
+              <button
+                id="deleate-btn"
+                style="border: none; padding: 5px 15px"
+                class="bg-danger text-light"
+              >
+                Deleate
+              </button>
+            </div>
           </div>
         </template>
       </section>
-      <section class="add">
-        <!-- Button trigger modal -->
-        <button
-          type="button"
-          class="btn btn-primary"
-          data-bs-toggle="modal"
-          data-bs-target="#exampleModal"
-        >
-          Add New Prodact
-        </button>
-
+      <div class="edit-btns-card container">
         <!-- Modal -->
         <div
           class="modal fade"
@@ -393,7 +384,7 @@
               </div>
               <div class="modal-body">
                 <input
-                  id="inp1"
+                  id="change-val1"
                   type="text"
                   class="form-control mb-3"
                   placeholder="Add image"
@@ -401,7 +392,7 @@
                   aria-describedby="addon-wrapping"
                 />
                 <input
-                  id="inp2"
+                  id="change-val2"
                   type="text"
                   class="form-control mb-3"
                   placeholder="Add Title"
@@ -409,7 +400,7 @@
                   aria-describedby="addon-wrapping"
                 />
                 <input
-                  id="inp3"
+                  id="change-val3"
                   type="text"
                   class="form-control mb-3"
                   placeholder="Add rating of prudact"
@@ -417,7 +408,7 @@
                   aria-describedby="addon-wrapping"
                 />
                 <input
-                  id="inp4"
+                  id="change-val4"
                   type="text"
                   class="form-control mb-3"
                   placeholder="Add value in a month"
@@ -425,7 +416,7 @@
                   aria-describedby="addon-wrapping"
                 />
                 <input
-                  id="inp5"
+                  id="change-val5"
                   type="text"
                   class="form-control mb-3"
                   placeholder="Add old value"
@@ -433,7 +424,7 @@
                   aria-describedby="addon-wrapping"
                 />
                 <input
-                  id="inp6"
+                  id="change-val6"
                   type="text"
                   class="form-control mb-3"
                   placeholder="Add discount value"
@@ -449,26 +440,20 @@
                 >
                   Close
                 </button>
-                <!-- <button
-                  id="save"
-                  class="btn btn-primary"
-                  data-bs-dismiss="modal"
-                >
-                  Save changes
-                </button> -->
                 <button
-                  id="save"
-                  class="btn btn-primary"
+                  id="save-changes"
                   data-bs-dismiss="modal"
+                  type="button"
+                  class="btn btn-primary"
                 >
-                  Save changes
+                  Save
                 </button>
               </div>
             </div>
           </div>
         </div>
-      </section>
-      <footer class="footer">
+      </div>
+      <footer class="footer container">
         <div class="footer__first">
           <h4 class="footer__first-title">Biz haqimizda</h4>
           <p class="footer__first-text">Topshirish punktlari</p>
@@ -538,7 +523,7 @@
           </div>
         </div>
       </footer>
-      <div class="footer__end">
+      <div class="footer__end container">
         <h4 class="footer__end-title">Maxfiylik kelishuvi</h4>
         <h4 class="footer__end-title">Foydalanuvchi kelishuvi</h4>
         <p class="footer__end-text">
@@ -547,13 +532,11 @@
         </p>
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script src="./js/slider.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="./js/admin.js"></script>
   </body>
 </html>

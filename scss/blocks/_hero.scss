@@ -110,8 +110,39 @@
   .hero__card {
     transition: none;
     margin-top: 10px;
+    width: 170px;
+    height: 420px;
+    margin-bottom: 110px;
+  }
+  .hero__one-center-img {
+    width: 130px;
+  }
+}
+@media only screen and (max-width: 390px) {
+  .hero__card {
+    width: 160px;
+    height: 450px;
+    // margin-bottom: 80px;
+  }
+  .hero__one-center-img {
+    width: 130px;
+  }
+}
+@media only screen and (max-width: 370px) {
+  .hero__card {
     width: 150px;
-    height: 550px;
+    height: 450px;
+    margin-bottom: 90px;
+  }
+  .hero__one-center-img {
+    width: 110px;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .hero__card {
+    width: 140px;
+    height: 450px;
+    margin-top: 10px;
   }
   .hero__one-center-img {
     width: 100px;
