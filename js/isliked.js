@@ -12,7 +12,6 @@ const uzum = localStorage.getItem("products")
         inMonth: "408 216 s'om/oyiga",
         oldValue: "4 900 000 s'om",
         bargainValue: "4 849 000 s'om",
-        moreThan: "24",
         heartIsFavorite: false,
       },
       {
@@ -23,7 +22,6 @@ const uzum = localStorage.getItem("products")
         inMonth: "1 560 s'om/oyiga",
         oldValue: "15 000 s'om",
         bargainValue: "13 000 s'om",
-        moreThan: "90",
         heartIsFavorite: false,
       },
       {
@@ -34,7 +32,6 @@ const uzum = localStorage.getItem("products")
         inMonth: "299 880 s'om/oyiga",
         oldValue: "3 010 000 s'om",
         bargainValue: "2 490  000 s'om",
-        moreThan: "3",
         heartIsFavorite: false,
       },
       {
@@ -45,7 +42,6 @@ const uzum = localStorage.getItem("products")
         inMonth: "4 290 s'om/oyiga",
         oldValue: "57 s'om",
         bargainValue: "41 s'om",
-        moreThan: "456",
         heartIsFavorite: false,
       },
       {
@@ -56,7 +52,6 @@ const uzum = localStorage.getItem("products")
         inMonth: "587 880 s'om/oyiga",
         oldValue: "5 830 000 s'om",
         bargainValue: "4 890 000 s'om",
-        moreThan: "34",
         heartIsFavorite: false,
       },
       {
@@ -67,7 +62,6 @@ const uzum = localStorage.getItem("products")
         inMonth: "41 880 s'om/oyiga",
         oldValue: "687 000 s'om",
         bargainValue: "349 000 s'om",
-        moreThan: "3240",
         heartIsFavorite: false,
       },
       {
@@ -78,7 +72,6 @@ const uzum = localStorage.getItem("products")
         inMonth: "864 000 s'om/oyiga",
         oldValue: "8 200 000 s'om",
         bargainValue: "7 200 000 s'om",
-        moreThan: "324",
         heartIsFavorite: false,
       },
       {
@@ -89,7 +82,6 @@ const uzum = localStorage.getItem("products")
         inMonth: "14 160 s'om/oyiga",
         oldValue: "200 000 s'om",
         bargainValue: "118 000 s'om",
-        moreThan: "324",
         heartIsFavorite: false,
       },
     ];
@@ -109,46 +101,7 @@ const addRaiting = getElement("#inp3");
 const addValInMonth = getElement("#inp4");
 const addOldVal = getElement("#inp5");
 const addDiscauontVal = getElement("#inp6");
-const addSave = document.querySelector("#save");
-const addSaveChanges = document.querySelector("#save-changes");
-const catigories = document.querySelector("#catigories");
-const all = document.querySelector(".all");
-
-let products = [];
-
-fetch("https://fakestoreapi.com/products")
-  .then((res) => res.json())
-  .then((json) => {
-    products = json;
-    createCards(products);
-  });
-
-fetch("https://fakestoreapi.com/products/categories")
-  .then((res) => res.json())
-  .then((json) => {
-    catigories.textContent = "";
-    json.forEach((catigory) => {
-      const newElement = document.createElement("li");
-      newElement.className = "header__bottom-item";
-      newElement.textContent = catigory;
-      newElement.style.cursor = "pointer";
-
-      catigories.appendChild(newElement);
-    });
-  });
-
-catigories.addEventListener("click", (evt) => {
-  fetch(`https://fakestoreapi.com/products/category/${evt.target.textContent}`)
-    .then((res) => res.json())
-    .then((json) => {
-      console.log(json);
-      createCards(json);
-    });
-});
-
-all.addEventListener("click", () => {
-  createCards(products);
-});
+const elNothing = getElement(".nothing");
 
 elSearchInput.addEventListener("change", () => {
   if (elSearchInput.value.length > 0) {
@@ -191,18 +144,16 @@ function createCards(items) {
       elHeart.src = "./assets/images/fav.png";
     }
 
-    topImg.src = item.image;
-    topImg.dataset.id = item.id;
+    topImg.src = item.img;
     title.textContent = item.title;
-    score.textContent = item.rating;
-    inMonth.textContent = item.category;
-    // oldValue.textContent = item.oldValue;
-    bargainValue.textContent = item.price;
+    score.textContent = item.score;
+    inMonth.textContent = item.inMonth;
+    oldValue.textContent = item.oldValue;
+    bargainValue.textContent = item.bargainValue;
 
     elWrapper.appendChild(newEl);
   });
 }
-createCards(uzum);
 // ! is favorite ni ki
 function createIsFavorite(items, where) {
   where.textContent = null;
@@ -219,16 +170,16 @@ function createIsFavorite(items, where) {
 
     elHeart.dataset.id = item.id;
     addSaveChanges.dataset.id = item.id;
+    if (item.heartIsFavorite) {
+      elHeart.src = "./assets/images/fav.png";
+    }
+
     topImg.src = item.img;
     title.textContent = item.title;
     score.textContent = item.score;
     inMonth.textContent = item.inMonth;
     oldValue.textContent = item.oldValue;
     bargainValue.textContent = item.bargainValue;
-
-    if (item.heartIsFavorite) {
-      elHeart.src = "./assets/images/fav.png";
-    }
 
     elWrapper.appendChild(newEl);
     console.log(newEl);
@@ -237,40 +188,26 @@ function createIsFavorite(items, where) {
   });
 }
 
-// const changeImg = getElement("#change-val1");
-// const changeTitle = getElement("#change-val2");
-// const changeRaiting = getElement("#change-val3");
-// const changeValInMonth = getElement("#change-val4");
-// const changeOldVal = getElement("#change-val5");
-// const changediscountVal = getElement("#change-val5");
-
 let arr = [];
 elWrapper.addEventListener("click", (evt) => {
-  // console.log("clicked");
-  // if (evt.target.className === "hero__one-top-img") {
-  //   console.log(evt.target);
-  //   const id = Number(evt.target.dataset.id);
-  //   arr.length = 0;
+  console.log("clicked");
+  if (evt.target.className === "hero__one-top-img") {
+    console.log(evt.target);
+    const id = Number(evt.target.dataset.id);
+    arr.length = 0;
 
-  //   uzum.forEach((card) => {
-  //     if (card.id === id) {
-  //       card.heartIsFavorite = !card.heartIsFavorite;
-  //     }
-  //     if (card.heartIsFavorite) {
-  //       arr.push(card);
-  //     }
-  //   });
-  //   localStorage.setItem("products", JSON.stringify(uzum));
-  //   console.log(arr);
-  //   createCards(uzum);
-  //   // createIsFavorite(arr, menu);
-  // }
-  if (evt.target.className.includes("hero__one-center-img")) {
-    const id = evt.target.dataset.id;
-    localStorage.setItem("id", id);
-
-    window.location.replace(
-      `http://127.0.0.1:5500/Uzum.uz/product.html?id=${id}`
-    );
+    uzum.forEach((card) => {
+      if (card.id === id) {
+        card.heartIsFavorite = !card.heartIsFavorite;
+      }
+      if (card.heartIsFavorite) {
+        arr.push(card);
+      }
+    });
+    localStorage.setItem("products", JSON.stringify(uzum));
+    console.log(arr);
+    createCards(uzum.filter((item) => item.heartIsFavorite == true));
+    // createIsFavorite(arr, menu);
   }
 });
+createCards(uzum.filter((item) => item.heartIsFavorite == true));

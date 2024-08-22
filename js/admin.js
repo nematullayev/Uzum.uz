@@ -1,91 +1,91 @@
 function getElement(select, selector = document) {
   return selector.querySelector(select);
 }
-let uzum = JSON.parse(localStorage.getItem("products"));
-console.log(uzum);
+const uzum = localStorage.getItem("products")
+  ? JSON.parse(localStorage.getItem("products"))
+  : [
+      {
+        id: 1,
+        img: "./assets/images/sams.png",
+        title: "Samsung Galaxy S10+ Q8/256 Awesome Navy Smartfoni",
+        score: "5.0 (22 ta sharh)",
+        inMonth: "408 216 s'om/oyiga",
+        oldValue: "4 900 000 s'om",
+        bargainValue: "4 849 000 s'om",
+        heartIsFavorite: false,
+      },
+      {
+        id: 2,
+        img: "./assets/images/oil.png",
+        title: "Kungaboqar yog'i ,tozalangan va xidsizlantirilgan",
+        score: "4.9 (4092 sharsh)",
+        inMonth: "1 560 s'om/oyiga",
+        oldValue: "15 000 s'om",
+        bargainValue: "13 000 s'om",
+        heartIsFavorite: false,
+      },
+      {
+        id: 3,
+        img: "./assets/images/redmi.png",
+        title: "Smartfon Xiaomi Redmi Note 13,6/128 GB, 8/128 GB, 8/256GB,…",
+        score: "5.0 (8 sharsh)",
+        inMonth: "299 880 s'om/oyiga",
+        oldValue: "3 010 000 s'om",
+        bargainValue: "2 490  000 s'om",
+        heartIsFavorite: false,
+      },
+      {
+        id: 4,
+        img: "./assets/images/family.png",
+        title: "Kir yuvish kukuni Oila tanlovi Ayoztazeligi, avtomat, 3 kg",
+        score: "4.5 (123 ta sharh)",
+        inMonth: "4 290 s'om/oyiga",
+        oldValue: "57 s'om",
+        bargainValue: "41 s'om",
+        heartIsFavorite: false,
+      },
+      {
+        id: 5,
+        img: "./assets/images/tv.png",
+        title: "Televizor Samsung Crystal UHD 4K43, 50, 55, 65 CU7100 Smart TV",
+        score: "5.0 (5 ta sharh)",
+        inMonth: "587 880 s'om/oyiga",
+        oldValue: "5 830 000 s'om",
+        bargainValue: "4 890 000 s'om",
+        heartIsFavorite: false,
+      },
+      {
+        id: 6,
+        img: "./assets/images/krasofka.png",
+        title: "Erkaklar uchun krossovka Jomar.vitaly men 2201 black",
+        score: "5.0 (20 ta sharh)",
+        inMonth: "41 880 s'om/oyiga",
+        oldValue: "687 000 s'om",
+        bargainValue: "349 000 s'om",
+        heartIsFavorite: false,
+      },
+      {
+        id: 7,
+        img: "./assets/images/laptop.png",
+        title: "Noutbuk HP AMD Ryzen 7-5825U,DDR4 16GB SSD 512GB",
+        score: "5.0 (1 ta sharh)",
+        inMonth: "864 000 s'om/oyiga",
+        oldValue: "8 200 000 s'om",
+        bargainValue: "7 200 000 s'om",
+        heartIsFavorite: false,
+      },
+      {
+        id: 8,
+        img: "./assets/images/himoya.png",
+        title: "Sport va raqs uchun tizzalar,voleybol basketboli uchun .",
+        score: "4.8 (21 ta sharh)",
+        inMonth: "14 160 s'om/oyiga",
+        oldValue: "200 000 s'om",
+        bargainValue: "118 000 s'om",
+        heartIsFavorite: false,
+      },
+    ];
 
-//[
-//   {
-//     id: 1,
-//     img: "./assets/images/sams.png",
-//     title: "Samsung Galaxy S10+ Q8/256 Awesome Navy Smartfoni",
-//     score: "5.0 (22 ta sharh)",
-//     inMonth: "408 216 s'om/oyiga",
-//     oldValue: "4 900 000 s'om",
-//     bargainValue: "4 849 000 s'om",
-//     heartIsFavorite: false,
-//   },
-//   {
-//     id: 2,
-//     img: "./assets/images/oil.png",
-//     title: "Kungaboqar yog'i ,tozalangan va xidsizlantirilgan",
-//     score: "4.9 (4092 sharsh)",
-//     inMonth: "1 560 s'om/oyiga",
-//     oldValue: "15 000 s'om",
-//     bargainValue: "13 000 s'om",
-//     heartIsFavorite: false,
-//   },
-//   {
-//     id: 3,
-//     img: "./assets/images/redmi.png",
-//     title: "Smartfon Xiaomi Redmi Note 13,6/128 GB, 8/128 GB, 8/256GB,…",
-//     score: "5.0 (8 sharsh)",
-//     inMonth: "299 880 s'om/oyiga",
-//     oldValue: "3 010 000 s'om",
-//     bargainValue: "2 490  000 s'om",
-//     heartIsFavorite: false,
-//   },
-//   {
-//     id: 4,
-//     img: "./assets/images/family.png",
-//     title: "Kir yuvish kukuni Oila tanlovi Ayoztazeligi, avtomat, 3 kg",
-//     score: "4.5 (123 ta sharh)",
-//     inMonth: "4 290 s'om/oyiga",
-//     oldValue: "57 s'om",
-//     bargainValue: "41 s'om",
-//     heartIsFavorite: false,
-//   },
-//   {
-//     id: 5,
-//     img: "./assets/images/tv.png",
-//     title: "Televizor Samsung Crystal UHD 4K43, 50, 55, 65 CU7100 Smart TV",
-//     score: "5.0 (5 ta sharh)",
-//     inMonth: "587 880 s'om/oyiga",
-//     oldValue: "5 830 000 s'om",
-//     bargainValue: "4 890 000 s'om",
-//     heartIsFavorite: false,
-//   },
-//   {
-//     id: 6,
-//     img: "./assets/images/krasofka.png",
-//     title: "Erkaklar uchun krossovka Jomar.vitaly men 2201 black",
-//     score: "5.0 (20 ta sharh)",
-//     inMonth: "41 880 s'om/oyiga",
-//     oldValue: "687 000 s'om",
-//     bargainValue: "349 000 s'om",
-//     heartIsFavorite: false,
-//   },
-//   {
-//     id: 7,
-//     img: "./assets/images/laptop.png",
-//     title: "Noutbuk HP AMD Ryzen 7-5825U,DDR4 16GB SSD 512GB",
-//     score: "5.0 (1 ta sharh)",
-//     inMonth: "864 000 s'om/oyiga",
-//     oldValue: "8 200 000 s'om",
-//     bargainValue: "7 200 000 s'om",
-//     heartIsFavorite: false,
-//   },
-//   {
-//     id: 8,
-//     img: "./assets/images/himoya.png",
-//     title: "Sport va raqs uchun tizzalar,voleybol basketboli uchun .",
-//     score: "4.8 (21 ta sharh)",
-//     inMonth: "14 160 s'om/oyiga",
-//     oldValue: "200 000 s'om",
-//     bargainValue: "118 000 s'om",
-//     heartIsFavorite: false,
-//   },
-// ];
 // localStorage.setItem("products", JSON.stringify(uzum));
 
 const elWrapper = getElement(".hero");
@@ -139,8 +139,12 @@ function createCards(items) {
     const oldValue = getElement(".hero__one-bootom-sum", newEl);
     const bargainValue = getElement(".hero__one-bootom-title", newEl);
     const elHeart = getElement("#heart", newEl);
+    const changedEditBtn = getElement("#edit-btn", newEl);
+    const deleatePro = getElement(".deleate-btn", newEl);
 
     elHeart.dataset.id = item.id;
+    deleatePro.dataset.id = item.id;
+    changedEditBtn.dataset.id = item.id;
     if (item.heartIsFavorite) {
       elHeart.src = "./assets/images/fav.png";
     }
@@ -153,7 +157,6 @@ function createCards(items) {
     bargainValue.textContent = item.bargainValue;
 
     elWrapper.appendChild(newEl);
-    addSaveChanges.dataset.id = item.id;
   });
 }
 createCards(uzum);
@@ -229,33 +232,7 @@ const changeTitle = getElement("#change-val2");
 const changeRaiting = getElement("#change-val3");
 const changeValInMonth = getElement("#change-val4");
 const changeOldVal = getElement("#change-val5");
-const changediscountVal = getElement("#change-val5");
-
-addSaveChanges.addEventListener("click", (e) => {
-  const id = Number(e.target.dataset.id);
-
-  const product = uzum.filter((product) => product.id === id)[0];
-
-  changeTitle.value = product.title;
-  changeImg.value = product.img;
-  changeOldVal.value = product.oldValue;
-  changediscountVal.value = product.bargainValue;
-  changeValInMonth.value = product.inMonth;
-
-  uzum.forEach((product) => {
-    if (product.id === id) {
-      product.title = changeTitle.value;
-      product.img = changeImg.value;
-      product.oldValue = changeOldVal.value;
-      product.bargainValue = changediscountVal.value;
-      product.inMonth = changeValInMonth.value;
-    }
-
-    elFormEdit.reset();
-  });
-  localStorage.setItem("products", JSON.stringify(uzum));
-  createCards(uzum);
-});
+const changediscountVal = getElement("#change-val6");
 
 let arr = [];
 elWrapper.addEventListener("click", (evt) => {
@@ -276,5 +253,42 @@ elWrapper.addEventListener("click", (evt) => {
     console.log(arr);
     createCards(uzum);
     // createIsFavorite(arr, menu);
+  }
+
+  if (evt.target.className.includes("add-item")) {
+    const id = +evt.target.dataset.id;
+    console.log(id);
+    const product = uzum.filter((product) => product.id === id)[0];
+
+    changeTitle.value = product.title;
+    changeImg.value = product.img;
+    changeOldVal.value = product.oldValue;
+    changediscountVal.value = product.bargainValue;
+    changeValInMonth.value = product.inMonth;
+
+    addSaveChanges.addEventListener("click", () => {
+      uzum.forEach((product) => {
+        if (product.id === id) {
+          product.title = changeTitle.value;
+          product.img = changeImg.value;
+          product.oldValue = changeOldVal.value;
+          product.bargainValue = changediscountVal.value;
+          product.inMonth = changeValInMonth.value;
+        }
+
+        // elFormEdit.reset();
+      });
+      localStorage.setItem("products", JSON.stringify(uzum));
+      createCards(uzum);
+    });
+  }
+  if (evt.target.className.includes("deleate-btn")) {
+    const id = Number(evt.target.dataset.id);
+    const delArr = uzum.filter((item) => {
+      return item.id !== id;
+    });
+
+    localStorage.setItem("products", JSON.stringify(delArr));
+    createCards(uzum);
   }
 });

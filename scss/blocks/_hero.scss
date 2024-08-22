@@ -33,6 +33,8 @@
     padding: 30px 20px;
     border-radius: 8px;
     background-color: #efefef;
+    height: 300px;
+    text-align: center;
   }
   &__one-top-botom {
     position: absolute;
@@ -96,6 +98,9 @@
   position: absolute;
   top: 8px;
   right: 8px;
+}
+.deleate-btn:hover {
+  background-color: #ff000090;
 }
 
 @media only screen and (max-width: 1200px) {

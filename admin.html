@@ -13,15 +13,61 @@
     <title>Uzum-Admin</title>
   </head>
   <body>
+    <div class="about__wrapper">
+      <section class="about container">
+        <div class="about__first">
+          <div class="about__first-one">
+            <div class="about__first-one-1">
+              <img
+                class="about__first-one-1-img"
+                src="./assets/images/location.svg"
+                alt=""
+              />
+              <p style="margin-bottom: 0">Shahar:</p>
+            </div>
+            <div class="about__first-one-2">
+              <a class="about__first-one-2-text" href="">Toshkent</a>
+            </div>
+          </div>
+          <div class="about__first-second">
+            <p style="margin-bottom: 0" class="about__first-second-text">
+              Topshirish punktlari
+            </p>
+          </div>
+        </div>
+        <!-- <div class="about__second">
+          <p class="about__secondtext">
+            Buyurtmangizni 1 kunda bepul yetkazib beramiz!
+          </p>
+        </div> -->
+        <div class="about__third">
+          <div class="about__third-one">
+            <a href="./index.html">Orqaga Qaytish</a>
+            <p class="about__third-text">Savol-javoblar</p>
+            <p class="about__third-text2">Buyurtmalarim</p>
+          </div>
+          <div class="about__third-second">
+            <img
+              class="about__third-second-img"
+              src="./assets/images/uzb-flag.svg"
+              alt="uzb-flag"
+            />
+            <strong class="about__third-second-text">Оʻzbekcha</strong>
+          </div>
+        </div>
+      </section>
+    </div>
     <div class="container">
       <header class="header">
         <div class="header__top">
           <div class="header__top-img">
-            <img
-              class="logo"
-              src="./assets/images/uzumLogo.svg"
-              alt="Uzum-logo"
-            />
+            <a href="./index.html">
+              <img
+                class="logo"
+                src="./assets/images/uzumLogo.svg"
+                alt="Uzum-logo"
+              />
+            </a>
           </div>
           <div class="header__top-btn-inp">
             <button id="btn" class="header__top-btn">
@@ -343,16 +389,21 @@
               <button
                 id="edit-btn"
                 style="border: none; padding: 5px 15px"
-                class="bg-info text-light"
+                class="add-item bg-info text-light"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
               >
                 Edit
               </button>
               <button
-                id="deleate-btn"
-                style="border: none; padding: 5px 15px"
-                class="bg-danger text-light"
+                class="deleate-btn"
+                style="
+                  border: none;
+                  padding: 5px 15px;
+                  background-color: red;
+                  color: white;
+                "
+                class="bg-info text-light"
               >
                 Deleate
               </button>

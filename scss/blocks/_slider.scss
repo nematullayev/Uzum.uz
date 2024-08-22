@@ -15,6 +15,17 @@
     right: 11%;
   }
 }
+// .swiper-button-prev:after {
+//   content: url("/Uzum.uz/assets/images/slider-left.png");
+// }
+
+.swiper-button-prev::after {
+  content: url(../assets/images/slider-left.png);
+}
+.swiper-button-next::after {
+  content: url(../assets/images/slider-right.png);
+}
+
 @media only screen and (max-width: 660px) {
   .slider__img-arrow-right,
   .slider__img-left,

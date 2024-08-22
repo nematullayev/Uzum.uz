@@ -14,7 +14,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./scss/main.css" />
-    <title>Uzum Market</title>
+    <title>One product</title>
     <link
       class="fav"
       rel="shortcut icon"
@@ -71,11 +71,13 @@
       <header class="header">
         <div class="header__top">
           <div class="header__top-img">
-            <img
-              class="logo"
-              src="./assets/images/uzumLogo.svg"
-              alt="Uzum-logo"
-            />
+            <a href="./index.html">
+              <img
+                class="logo"
+                src="./assets/images/uzumLogo.svg"
+                alt="Uzum-logo"
+              />
+            </a>
           </div>
           <div class="header__top-btn-inp">
             <button id="btn" class="header__top-btn">
@@ -148,8 +150,7 @@
           </button>
         </div>
         <div class="header__bottom swiper">
-          <strong class="cat">Catigories:</strong>
-          <ul id="catigories" class="header__bottom-list">
+          <ul class="header__bottom-list">
             <div class="header__bottom-slide swiper-wrapper">
               <li class="header__bottom-item">
                 <button
@@ -248,12 +249,12 @@
                 </button>
               </li>
               <!-- <li class="header__bottom-item">
-                <button
+                  <button
                   style="color: #74767e"
                   id="header__bottom-item-btn"
                   class="header__bottom-item-btn swiper-slide"
                 >
-                  <p>G'ozalik</p>
+                <p>G'ozalik</p>
                   <span>va</span>
                   <span>parvarish</span>
                 </button>
@@ -273,203 +274,71 @@
               </li>
             </div>
           </ul>
-          <button class="all">All</button>
         </div>
       </header>
-      <section class="slider swiper">
-        <div class="slider__all">
-          <div class="slider-list swiper-wrapper">
-            <div class="slider__first swiper-slide">
-              <img
-                class="slider__img"
-                src="./assets/images/sloder1.png"
-                alt="Slider"
-              />
+      <section class="one-product">
+        <div class="one-product__left">
+          <img class="one-product__left-img" id="last-img" src="" alt="" />
+        </div>
+        <div class="one-product__right">
+          <div class="one-product__right-top">
+            <div class="one-product__right-top-left">
+              <div class="one-product__right-top-left-all1">
+                <img
+                  class="one-product__right-top-left-all1-img"
+                  src="./assets/images/star-fill.svg"
+                  alt="star"
+                />
+                <p id="one-product__right-top-left-raiting"></p>
+              </div>
+              <div class="one-product__right-top-left-all2">
+                <p class="one-product__right-top-left-all2-text">
+                  More Than <span id="more-than"></span> orders
+                </p>
+              </div>
             </div>
-            <div class="slider__second swiper-slide">
-              <img
-                class="slider__img"
-                src="./assets/images/slider2.png"
-                alt="Slider"
-              />
+            <div class="one-product__right-top-right">
+              <img id="like" src="./assets/images/heart.svg" alt="" />
+              <strong>In desiries</strong>
             </div>
-            <div class="slider__four swiper-slide">
-              <img
-                class="slider__img"
-                src="./assets/images/slider3.png"
-                alt="Slider"
-              />
+          </div>
+          <div class="one-product__right-hero">
+            <h4 class="one-product__right-hero-title"></h4>
+          </div>
+          <div class="descrip">
+            <strong>About</strong>
+            <p class="description"></p>
+          </div>
+          <div class="one-product__right-hero2">
+            <strong class="one-product__right-hero2-text">Quantitiy:</strong>
+            <div class="one-product__right-hero2-all">
+              <div class="one-product__right-hero2-senter">
+                <p class="one-product__right-hero2-senter-select2">-</p>
+                <p class="one-product__right-hero2-senter-select">1</p>
+                <p class="one-product__right-hero2-senter-select2">+</p>
+              </div>
+              <div class="one-product__right-hero2-senter-last">
+                <p class="one-product__right-hero2-senter-last-text">
+                  Not Avallalble
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="one-product__right-last-one">
+            <strong class="one-product__right-last-one-text">Price:</strong>
+            <div class="one-product__right-last-one-senter">
+              <h3
+                class="one-product__right-last-one-senter-discount-price"
+              ></h3>
+              <p class="one-product__right-last-one-senter-real-price"></p>
+              <button class="one-product__right-last-one-senter-type">
+                Exklyuziv
+              </button>
             </div>
           </div>
         </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
       </section>
-      <div class="title">
-        <h1>Arzon narxlar</h1>
-        <img src="./assets/images/arrow.svg" alt="" />
-      </div>
-      <section class="hero">
-        <template
-          ><div class="hero__card">
-            <div class="hero__one-top">
-              <div class="hero__one-top-2">
-                <img
-                  id="heart"
-                  class="hero__one-top-img"
-                  src="./assets/images/heart.svg"
-                  alt="1"
-                />
-                <img
-                  style="width: 70%; cursor: pointer"
-                  class="hero__one-center-img"
-                  src="./assets/images/sams.png"
-                  alt=""
-                />
-              </div>
-              <div class="hero__one-top-botom">
-                <button id="catigories-card" class="hero__one-top-botom-btn">
-                  Eksklyuziv
-                </button>
-              </div>
-            </div>
-            <div class="hero__one-center">
-              <p class="hero__one-center-title">
-                Samsung Galaxy S10+ Q8/256 Awesome Navy Smartfoni
-              </p>
-            </div>
-            <div class="hero__one-second-center">
-              <div class="hero__one-second-center1">
-                <img src="./assets/images/star-fill.svg" alt="" />
-
-                <p class="hero__one-second-center1-p">5.0 (22 ta sharh)</p>
-              </div>
-              <div class="hero__one-second-center2">
-                <p class="hero__one-second-center-p">408 216 s'om/oyiga</p>
-              </div>
-            </div>
-            <div class="hero__one-bootom">
-              <div>
-                <p class="hero__one-bootom-sum">4 900 000</p>
-                <h3 class="hero__one-bootom-title">4 849 000 s'om</h3>
-              </div>
-              <div>
-                <img
-                  class="hero__one-bootom-img"
-                  src="./assets/images/Button.svg"
-                  alt=""
-                />
-              </div>
-            </div>
-          </div>
-        </template>
-      </section>
-      <div class="more-products">
-        <button id="more">Yana Korsatish 10</button>
-      </div>
-      <!-- <section class="add">
-        <button
-          type="button"
-          class="btn btn-primary"
-          data-bs-toggle="modal"
-          data-bs-target="#exampleModal"
-        >
-          Add New Prodact
-        </button>
-
-        <div
-          class="modal fade"
-          id="exampleModal"
-          tabindex="-1"
-          aria-labelledby="exampleModalLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">
-                  Modal title
-                </h1>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">
-                <input
-                  id="inp1"
-                  type="text"
-                  class="form-control mb-3"
-                  placeholder="Add image"
-                  aria-label="Username"
-                  aria-describedby="addon-wrapping"
-                />
-                <input
-                  id="inp2"
-                  type="text"
-                  class="form-control mb-3"
-                  placeholder="Add Title"
-                  aria-label="Username"
-                  aria-describedby="addon-wrapping"
-                />
-                <input
-                  id="inp3"
-                  type="text"
-                  class="form-control mb-3"
-                  placeholder="Add rating of prudact"
-                  aria-label="Username"
-                  aria-describedby="addon-wrapping"
-                />
-                <input
-                  id="inp4"
-                  type="text"
-                  class="form-control mb-3"
-                  placeholder="Add value in a month"
-                  aria-label="Username"
-                  aria-describedby="addon-wrapping"
-                />
-                <input
-                  id="inp5"
-                  type="text"
-                  class="form-control mb-3"
-                  placeholder="Add old value"
-                  aria-label="Username"
-                  aria-describedby="addon-wrapping"
-                />
-                <input
-                  id="inp6"
-                  type="text"
-                  class="form-control mb-3"
-                  placeholder="Add discount value"
-                  aria-label="Username"
-                  aria-describedby="addon-wrapping"
-                />
-              </div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Close
-                </button>
-
-                <button
-                  id="save"
-                  class="btn btn-primary"
-                  data-bs-dismiss="modal"
-                >
-                  Save changes
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> -->
-      <footer class="footer">
+      <footer style="margin-top: 100px" class="footer">
         <div class="footer__first">
           <h4 class="footer__first-title">Biz haqimizda</h4>
           <p class="footer__first-text">Topshirish punktlari</p>
@@ -596,13 +465,14 @@
         </div>
       </section>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script src="./js/slider.js"></script>
-    <script src="./js/main.js"></script>
+
+    <script src="./js/product.js"></script>
   </body>
 </html>

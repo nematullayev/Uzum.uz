@@ -91,6 +91,12 @@
   }
   &__bottom {
     margin-bottom: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  &__bottom-item:active {
+    color: #7f4dff;
   }
   &__bottom-item-img {
     width: 24px;
@@ -136,6 +142,21 @@
     gap: 28px;
   }
 
+  .all {
+    padding: 5px 50px;
+    border: none;
+
+    background-color: #7f4dff;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .all:active {
+    background-color: white;
+    border: 1px solid #7f4dff;
+    color: #7f4dff;
+  }
   .nmadir {
     display: flex;
   }

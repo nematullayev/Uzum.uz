@@ -4,23 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./scss/main.css" />
-    <title>Uzum Market</title>
-    <link
-      class="fav"
-      rel="shortcut icon"
-      href="./assets/images/uzum-favicon.svg"
-      type="image/x-icon"
-    />
+    <title>Yoqimlilr</title>
   </head>
   <body>
     <div class="about__wrapper">
@@ -46,13 +36,13 @@
           </div>
         </div>
         <!-- <div class="about__second">
-          <p class="about__secondtext">
-            Buyurtmangizni 1 kunda bepul yetkazib beramiz!
-          </p>
-        </div> -->
+            <p class="about__secondtext">
+              Buyurtmangizni 1 kunda bepul yetkazib beramiz!
+            </p>
+          </div> -->
         <div class="about__third">
           <div class="about__third-one">
-            <a style="color: blueviolet" href="./admin.html">Uzumda Soting</a>
+            <a href="./index.html">Orqaga qaytish</a>
             <p class="about__third-text">Savol-javoblar</p>
             <p class="about__third-text2">Buyurtmalarim</p>
           </div>
@@ -71,11 +61,13 @@
       <header class="header">
         <div class="header__top">
           <div class="header__top-img">
-            <img
-              class="logo"
-              src="./assets/images/uzumLogo.svg"
-              alt="Uzum-logo"
-            />
+            <a href="./index.html">
+              <img
+                class="logo"
+                src="./assets/images/uzumLogo.svg"
+                alt="Uzum-logo"
+              />
+            </a>
           </div>
           <div class="header__top-btn-inp">
             <button id="btn" class="header__top-btn">
@@ -112,16 +104,14 @@
                 </button>
               </li>
               <li id="li2">
-                <a style="text-decoration: none" href="./isLiked.html">
-                  <button class="header__top-end-item">
-                    <img
-                      class="header__top-end-item-img"
-                      src="./assets/images/heart.svg"
-                      alt="ask"
-                    />
-                    <p>Soralgan</p>
-                  </button>
-                </a>
+                <button class="header__top-end-item">
+                  <img
+                    class="header__top-end-item-img"
+                    src="./assets/images/heart.svg"
+                    alt="ask"
+                  />
+                  <p>Soralgan</p>
+                </button>
               </li>
               <li id="li3">
                 <button class="header__top-end-item">
@@ -148,8 +138,7 @@
           </button>
         </div>
         <div class="header__bottom swiper">
-          <strong class="cat">Catigories:</strong>
-          <ul id="catigories" class="header__bottom-list">
+          <ul class="header__bottom-list">
             <div class="header__bottom-slide swiper-wrapper">
               <li class="header__bottom-item">
                 <button
@@ -170,9 +159,9 @@
                 >
                   <img
                     class="header__bottom-item-img"
-                    src="https://static.uzum.uz/fast_categories/school-2.png"
+                    src="https://static.uzum.uz/fast_categories/%D0%A7%D0%B8%D0%BB%D0%BB%D1%8F.png"
                     alt="2"
-                  />Kanselyariya
+                  />Yozgi savdo
                 </button>
               </li>
               <li class="header__bottom-item">
@@ -248,16 +237,16 @@
                 </button>
               </li>
               <!-- <li class="header__bottom-item">
-                <button
-                  style="color: #74767e"
-                  id="header__bottom-item-btn"
-                  class="header__bottom-item-btn swiper-slide"
-                >
-                  <p>G'ozalik</p>
-                  <span>va</span>
-                  <span>parvarish</span>
-                </button>
-              </li> -->
+                  <button
+                    style="color: #74767e"
+                    id="header__bottom-item-btn"
+                    class="header__bottom-item-btn swiper-slide"
+                  >
+                    <p>G'ozalik</p>
+                    <span>va</span>
+                    <span>parvarish</span>
+                  </button>
+                </li> -->
               <li class="header__bottom-item">
                 <button
                   style="color: #74767e"
@@ -273,43 +262,8 @@
               </li>
             </div>
           </ul>
-          <button class="all">All</button>
         </div>
       </header>
-      <section class="slider swiper">
-        <div class="slider__all">
-          <div class="slider-list swiper-wrapper">
-            <div class="slider__first swiper-slide">
-              <img
-                class="slider__img"
-                src="./assets/images/sloder1.png"
-                alt="Slider"
-              />
-            </div>
-            <div class="slider__second swiper-slide">
-              <img
-                class="slider__img"
-                src="./assets/images/slider2.png"
-                alt="Slider"
-              />
-            </div>
-            <div class="slider__four swiper-slide">
-              <img
-                class="slider__img"
-                src="./assets/images/slider3.png"
-                alt="Slider"
-              />
-            </div>
-          </div>
-        </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-      </section>
-      <div class="title">
-        <h1>Arzon narxlar</h1>
-        <img src="./assets/images/arrow.svg" alt="" />
-      </div>
       <section class="hero">
         <template
           ><div class="hero__card">
@@ -322,7 +276,6 @@
                   alt="1"
                 />
                 <img
-                  style="width: 70%; cursor: pointer"
                   class="hero__one-center-img"
                   src="./assets/images/sams.png"
                   alt=""
@@ -365,111 +318,21 @@
           </div>
         </template>
       </section>
-      <div class="more-products">
-        <button id="more">Yana Korsatish 10</button>
+      <div style="text-align: center; margin-top: 0" class="nothing">
+        <img
+          style="width: 300px"
+          src="https://uzum.uz/static/img/hearts.cf414be.png"
+          alt=""
+        />
+        <h2 style="margin-bottom: 20px" class="nothing-title">
+          Sizga yoqqanini qoʻshing
+        </h2>
+        <p style="max-width: 500px; margin: 0 auto">
+          Mahsulotdagi ♡ belgisini bosing. Akkauntga kiring va barcha
+          saralanganlar saqlanib qoladi
+        </p>
       </div>
-      <!-- <section class="add">
-        <button
-          type="button"
-          class="btn btn-primary"
-          data-bs-toggle="modal"
-          data-bs-target="#exampleModal"
-        >
-          Add New Prodact
-        </button>
-
-        <div
-          class="modal fade"
-          id="exampleModal"
-          tabindex="-1"
-          aria-labelledby="exampleModalLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">
-                  Modal title
-                </h1>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">
-                <input
-                  id="inp1"
-                  type="text"
-                  class="form-control mb-3"
-                  placeholder="Add image"
-                  aria-label="Username"
-                  aria-describedby="addon-wrapping"
-                />
-                <input
-                  id="inp2"
-                  type="text"
-                  class="form-control mb-3"
-                  placeholder="Add Title"
-                  aria-label="Username"
-                  aria-describedby="addon-wrapping"
-                />
-                <input
-                  id="inp3"
-                  type="text"
-                  class="form-control mb-3"
-                  placeholder="Add rating of prudact"
-                  aria-label="Username"
-                  aria-describedby="addon-wrapping"
-                />
-                <input
-                  id="inp4"
-                  type="text"
-                  class="form-control mb-3"
-                  placeholder="Add value in a month"
-                  aria-label="Username"
-                  aria-describedby="addon-wrapping"
-                />
-                <input
-                  id="inp5"
-                  type="text"
-                  class="form-control mb-3"
-                  placeholder="Add old value"
-                  aria-label="Username"
-                  aria-describedby="addon-wrapping"
-                />
-                <input
-                  id="inp6"
-                  type="text"
-                  class="form-control mb-3"
-                  placeholder="Add discount value"
-                  aria-label="Username"
-                  aria-describedby="addon-wrapping"
-                />
-              </div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Close
-                </button>
-
-                <button
-                  id="save"
-                  class="btn btn-primary"
-                  data-bs-dismiss="modal"
-                >
-                  Save changes
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> -->
-      <footer class="footer">
+      <footer style="margin-top: 100px" class="footer">
         <div class="footer__first">
           <h4 class="footer__first-title">Biz haqimizda</h4>
           <p class="footer__first-text">Topshirish punktlari</p>
@@ -548,6 +411,7 @@
         </p>
       </div>
     </div>
+
     <div class="mobile__footer-wrapper">
       <section class="mobile__footer container">
         <a style="text-decoration: none" href="./index.html">
@@ -596,13 +460,12 @@
         </div>
       </section>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script src="./js/slider.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="./js/isliked.js"></script>
   </body>
 </html>

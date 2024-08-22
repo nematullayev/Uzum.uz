@@ -1,19 +1,16 @@
 .footer {
   display: flex;
+
   gap: 100px;
   align-items: start;
   justify-content: space-between;
+
   &__first {
     display: flex;
     flex-direction: column;
     gap: 16px;
   }
   &__second {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  &__third {
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -64,9 +61,11 @@
     margin-bottom: 0;
   }
 }
+
 .white-app {
   display: none;
 }
+
 @media only screen and (max-width: 1200px) {
   .footer {
     margin-top: 250px;

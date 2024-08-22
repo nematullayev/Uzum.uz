@@ -1,0 +1,105 @@
+.one-product {
+  display: flex;
+  gap: 100px;
+  margin-top: 50px;
+  justify-content: center;
+  &__left-img {
+    width: 350px;
+  }
+  &__right {
+    max-width: 1000px;
+  }
+  &__right-top {
+    padding-left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__right-top-left {
+    display: flex;
+    gap: 20px;
+  }
+  &__right-top-left-all1 {
+    display: flex;
+    gap: 8px;
+  }
+  &__right-top-left-all1-img {
+    width: 20px;
+  }
+  &__right-top-left-all2-text {
+    margin-bottom: 0;
+  }
+  &__right-hero-title {
+    margin-bottom: 0;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+  }
+  .descrip {
+    margin-top: 50px;
+  }
+  &__right-hero2 {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  &__right-hero2-all {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  &__right-hero2-senter {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding: 5px 13px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  &__right-hero2-senter-select {
+    margin-bottom: 0;
+  }
+  &__right-hero2-senter-select2 {
+    margin-bottom: 0;
+    font-size: 20px;
+  }
+  &__right-hero2-senter-last-text {
+    margin-bottom: 0;
+    color: green;
+  }
+  &__right-last-one {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &__right-last-one-senter {
+    display: flex;
+    align-items: end;
+    gap: 20px;
+  }
+  &__right-last-one-senter-real-price {
+    margin-bottom: 0;
+    text-decoration: line-through;
+    color: #ccc;
+  }
+  &__right-last-one-senter-discount-price {
+    margin-bottom: 0;
+  }
+  &__right-last-one-senter-type {
+    border: none;
+    background-color: #7000ff;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
+}
+#one-product__right-top-left-raiting {
+  margin-bottom: 0;
+}
+@media only screen and (max-width: 1000px) {
+  .one-product {
+    flex-direction: column;
+  }
+}
