@@ -10,7 +10,7 @@ ul {
 }
 
 .container {
-  max-width: 1240px;
+  max-width: 1290px;
   width: 100%;
   margin: 0 auto;
   padding: 0 20px;
@@ -258,8 +258,7 @@ ul {
 .hero {
   display: flex;
   flex-wrap: wrap;
-  gap: 35px;
-  justify-content: center;
+  gap: 15px;
   align-items: center;
   margin-bottom: 100px;
 }
@@ -274,7 +273,7 @@ ul {
   width: 30px;
 }
 .hero__card {
-  width: 250px;
+  width: 238px;
   display: flex;
   flex-direction: column;
   gap: 10px;

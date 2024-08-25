@@ -113,6 +113,15 @@ const addSave = document.querySelector("#save");
 const addSaveChanges = document.querySelector("#save-changes");
 const catigories = document.querySelector("#catigories");
 const all = document.querySelector(".all");
+const elLogin = getElement("#login");
+const elIsLogin = getElement("#isLogin");
+const elIsLogOut = getElement("#logout");
+
+elIsLogOut.addEventListener("click", () => {
+  localStorage.removeItem("token");
+  elIsLogin.style.display = "none";
+  elLogin.style.display = "block";
+});
 
 let products = [];
 
@@ -173,6 +182,46 @@ elMobileBtn.addEventListener("click", () => {
     createCards(uzum);
   }
 });
+
+const elUsername = getElement("#username");
+const elPassword = getElement("#password");
+const elSave = getElement("#save");
+
+elSave.addEventListener("click", () => {
+  const obj = {
+    username: elUsername.value,
+    password: elPassword.value,
+  };
+  fetch("https://fakestoreapi.com/auth/login", {
+    method: "POST",
+    body: JSON.stringify(obj),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((res) => {
+      if (res.status !== 200) {
+        throw new Error("Invalid login");
+      }
+      return res.json();
+    })
+    .then((json) => {
+      console.log(json);
+
+      localStorage.setItem("token", json.token);
+      window.location.replace(`http://127.0.0.1:5500/Uzum.uz/admin.html`);
+    })
+    .catch((err) => {
+      alert(err);
+    });
+});
+const token = localStorage.getItem("token");
+
+if (token) {
+  elIsLogin.style.display = "block";
+  elLogin.style.display = "none";
+}
+
 function createCards(items) {
   elWrapper.textContent = null;
   let createCards = items.map((item) => {
@@ -203,68 +252,9 @@ function createCards(items) {
   });
 }
 createCards(uzum);
-// ! is favorite ni ki
-function createIsFavorite(items, where) {
-  where.textContent = null;
-  let createCards = items.map((item) => {
-    const newEl = template.content.cloneNode(true);
-
-    const topImg = getElement(".hero__one-center-img", newEl);
-    const title = getElement(".hero__one-center-title", newEl);
-    const score = getElement(".hero__one-second-center1-p", newEl);
-    const inMonth = getElement(".hero__one-second-center-p", newEl);
-    const oldValue = getElement(".hero__one-bootom-sum", newEl);
-    const bargainValue = getElement(".hero__one-bootom-title", newEl);
-    const elHeart = getElement("#heart", newEl);
-
-    elHeart.dataset.id = item.id;
-    addSaveChanges.dataset.id = item.id;
-    topImg.src = item.img;
-    title.textContent = item.title;
-    score.textContent = item.score;
-    inMonth.textContent = item.inMonth;
-    oldValue.textContent = item.oldValue;
-    bargainValue.textContent = item.bargainValue;
-
-    if (item.heartIsFavorite) {
-      elHeart.src = "./assets/images/fav.png";
-    }
-
-    elWrapper.appendChild(newEl);
-    console.log(newEl);
-
-    where.appendChild(newEl);
-  });
-}
-
-// const changeImg = getElement("#change-val1");
-// const changeTitle = getElement("#change-val2");
-// const changeRaiting = getElement("#change-val3");
-// const changeValInMonth = getElement("#change-val4");
-// const changeOldVal = getElement("#change-val5");
-// const changediscountVal = getElement("#change-val5");
 
 let arr = [];
 elWrapper.addEventListener("click", (evt) => {
-  // console.log("clicked");
-  // if (evt.target.className === "hero__one-top-img") {
-  //   console.log(evt.target);
-  //   const id = Number(evt.target.dataset.id);
-  //   arr.length = 0;
-
-  //   uzum.forEach((card) => {
-  //     if (card.id === id) {
-  //       card.heartIsFavorite = !card.heartIsFavorite;
-  //     }
-  //     if (card.heartIsFavorite) {
-  //       arr.push(card);
-  //     }
-  //   });
-  //   localStorage.setItem("products", JSON.stringify(uzum));
-  //   console.log(arr);
-  //   createCards(uzum);
-  //   // createIsFavorite(arr, menu);
-  // }
   if (evt.target.className.includes("hero__one-center-img")) {
     const id = evt.target.dataset.id;
     localStorage.setItem("id", id);

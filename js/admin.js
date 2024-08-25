@@ -1,100 +1,7 @@
 function getElement(select, selector = document) {
   return selector.querySelector(select);
 }
-const uzum = localStorage.getItem("products")
-  ? JSON.parse(localStorage.getItem("products"))
-  : [
-      {
-        id: 1,
-        img: "./assets/images/sams.png",
-        title: "Samsung Galaxy S10+ Q8/256 Awesome Navy Smartfoni",
-        score: "5.0 (22 ta sharh)",
-        inMonth: "408 216 s'om/oyiga",
-        oldValue: "4 900 000 s'om",
-        bargainValue: "4 849 000 s'om",
-        heartIsFavorite: false,
-      },
-      {
-        id: 2,
-        img: "./assets/images/oil.png",
-        title: "Kungaboqar yog'i ,tozalangan va xidsizlantirilgan",
-        score: "4.9 (4092 sharsh)",
-        inMonth: "1 560 s'om/oyiga",
-        oldValue: "15 000 s'om",
-        bargainValue: "13 000 s'om",
-        heartIsFavorite: false,
-      },
-      {
-        id: 3,
-        img: "./assets/images/redmi.png",
-        title: "Smartfon Xiaomi Redmi Note 13,6/128 GB, 8/128 GB, 8/256GB,…",
-        score: "5.0 (8 sharsh)",
-        inMonth: "299 880 s'om/oyiga",
-        oldValue: "3 010 000 s'om",
-        bargainValue: "2 490  000 s'om",
-        heartIsFavorite: false,
-      },
-      {
-        id: 4,
-        img: "./assets/images/family.png",
-        title: "Kir yuvish kukuni Oila tanlovi Ayoztazeligi, avtomat, 3 kg",
-        score: "4.5 (123 ta sharh)",
-        inMonth: "4 290 s'om/oyiga",
-        oldValue: "57 s'om",
-        bargainValue: "41 s'om",
-        heartIsFavorite: false,
-      },
-      {
-        id: 5,
-        img: "./assets/images/tv.png",
-        title: "Televizor Samsung Crystal UHD 4K43, 50, 55, 65 CU7100 Smart TV",
-        score: "5.0 (5 ta sharh)",
-        inMonth: "587 880 s'om/oyiga",
-        oldValue: "5 830 000 s'om",
-        bargainValue: "4 890 000 s'om",
-        heartIsFavorite: false,
-      },
-      {
-        id: 6,
-        img: "./assets/images/krasofka.png",
-        title: "Erkaklar uchun krossovka Jomar.vitaly men 2201 black",
-        score: "5.0 (20 ta sharh)",
-        inMonth: "41 880 s'om/oyiga",
-        oldValue: "687 000 s'om",
-        bargainValue: "349 000 s'om",
-        heartIsFavorite: false,
-      },
-      {
-        id: 7,
-        img: "./assets/images/laptop.png",
-        title: "Noutbuk HP AMD Ryzen 7-5825U,DDR4 16GB SSD 512GB",
-        score: "5.0 (1 ta sharh)",
-        inMonth: "864 000 s'om/oyiga",
-        oldValue: "8 200 000 s'om",
-        bargainValue: "7 200 000 s'om",
-        heartIsFavorite: false,
-      },
-      {
-        id: 8,
-        img: "./assets/images/himoya.png",
-        title: "Sport va raqs uchun tizzalar,voleybol basketboli uchun .",
-        score: "4.8 (21 ta sharh)",
-        inMonth: "14 160 s'om/oyiga",
-        oldValue: "200 000 s'om",
-        bargainValue: "118 000 s'om",
-        heartIsFavorite: false,
-      },
-    ];
 
-// localStorage.setItem("products", JSON.stringify(uzum));
-
-const elWrapper = getElement(".hero");
-const template = getElement("template");
-const elSearchInput = getElement(".header__top-inp");
-const elSearchMobileInput = getElement(".header__top-inp2");
-const elMobileBtn = getElement("#header__mobile-btn");
-
-// add
 const addImg = getElement("#inp1");
 const addTitle = getElement("#inp2");
 const addRaiting = getElement("#inp3");
@@ -104,29 +11,38 @@ const addDiscauontVal = getElement("#inp6");
 const addSave = document.querySelector("#save");
 const addSaveChanges = document.querySelector("#save-changes");
 
-elSearchInput.addEventListener("change", () => {
-  if (elSearchInput.value.length > 0) {
-    const filteredArray = uzum.filter((item) =>
-      item.title.toLowerCase().includes(elSearchInput.value.toLowerCase())
-    );
+const token = localStorage.getItem("token");
 
-    createCards(filteredArray);
-  } else {
-    createCards(uzum);
-  }
-});
-// todo mobile inp
-elMobileBtn.addEventListener("click", () => {
-  if (elSearchMobileInput.value.length > 0) {
-    const filteredArray = uzum.filter((item) =>
-      item.title.toLowerCase().includes(elSearchMobileInput.value.toLowerCase())
-    );
+if (!token) {
+  window.location.replace("http://127.0.0.1:5500/Uzum.uz/index.html");
+}
 
-    createCards(filteredArray);
-  } else {
-    createCards(uzum);
-  }
+const elWrapper = getElement(".hero");
+const template = getElement("template");
+
+let products = [];
+
+fetch("https://fakestoreapi.com/products")
+  .then((res) => res.json())
+  .then((json) => {
+    products = json;
+    createCards(products);
+  });
+addSave.addEventListener("click", () => {
+  fetch("https://fakestoreapi.com/products", {
+    method: "POST",
+    body: JSON.stringify({
+      title: addTitle,
+      price: addDiscauontVal,
+      description: addValInMonth,
+      image: addImg,
+      category: addRaiting,
+    }),
+  })
+    .then((res) => res.json())
+    .then((json) => console.log(json));
 });
+
 function createCards(items) {
   elWrapper.textContent = null;
   let createCards = items.map((item) => {
@@ -139,156 +55,33 @@ function createCards(items) {
     const oldValue = getElement(".hero__one-bootom-sum", newEl);
     const bargainValue = getElement(".hero__one-bootom-title", newEl);
     const elHeart = getElement("#heart", newEl);
-    const changedEditBtn = getElement("#edit-btn", newEl);
-    const deleatePro = getElement(".deleate-btn", newEl);
-
-    elHeart.dataset.id = item.id;
-    deleatePro.dataset.id = item.id;
-    changedEditBtn.dataset.id = item.id;
-    if (item.heartIsFavorite) {
-      elHeart.src = "./assets/images/fav.png";
-    }
-
-    topImg.src = item.img;
-    title.textContent = item.title;
-    score.textContent = item.score;
-    inMonth.textContent = item.inMonth;
-    oldValue.textContent = item.oldValue;
-    bargainValue.textContent = item.bargainValue;
-
-    elWrapper.appendChild(newEl);
-  });
-}
-createCards(uzum);
-// ! is favorite ni ki
-function createIsFavorite(items, where) {
-  where.textContent = null;
-  let createCards = items.map((item) => {
-    const newEl = template.content.cloneNode(true);
-
-    const topImg = getElement(".hero__one-center-img", newEl);
-    const title = getElement(".hero__one-center-title", newEl);
-    const score = getElement(".hero__one-second-center1-p", newEl);
-    const inMonth = getElement(".hero__one-second-center-p", newEl);
-    const oldValue = getElement(".hero__one-bootom-sum", newEl);
-    const bargainValue = getElement(".hero__one-bootom-title", newEl);
-    const elHeart = getElement("#heart", newEl);
 
     elHeart.dataset.id = item.id;
     if (item.heartIsFavorite) {
       elHeart.src = "./assets/images/fav.png";
     }
 
-    topImg.src = item.img;
+    topImg.src = item.image;
+    topImg.dataset.id = item.id;
     title.textContent = item.title;
-    score.textContent = item.score;
-    inMonth.textContent = item.inMonth;
-    oldValue.textContent = item.oldValue;
-    bargainValue.textContent = item.bargainValue;
+    score.textContent = item.rating;
+    inMonth.textContent = item.category;
+    // oldValue.textContent = item.oldValue;
+    bargainValue.textContent = item.price;
 
     elWrapper.appendChild(newEl);
-    console.log(newEl);
-
-    where.appendChild(newEl);
   });
 }
-
-addSave.addEventListener("click", () => {
-  const imgValue = addImg.value;
-  const titleValue = addTitle.value;
-  const scoreValue = addRaiting.value;
-  const inMonthValue = addValInMonth.value;
-  const oldValue = addOldVal.value;
-  const bargainValue = addDiscauontVal.value;
-
-  const newID = uzum.length;
-
-  const addNewProduct = {
-    id: newID + 1,
-    img: imgValue,
-    title: titleValue,
-    score: scoreValue,
-    inMonth: inMonthValue,
-    oldValue: oldValue,
-    bargainValue: bargainValue,
-    heartIsFavorite: false,
-  };
-  uzum.push(addNewProduct);
-
-  addImg.value = "";
-  addTitle.value = "";
-  addRaiting.value = "";
-  addValInMonth.value = "";
-  addOldVal.value = "";
-  addDiscauontVal.value = "";
-
-  localStorage.setItem("products", JSON.stringify(uzum));
-  createCards(uzum);
-  console.log(uzum);
-});
-
-const changeImg = getElement("#change-val1");
-const changeTitle = getElement("#change-val2");
-const changeRaiting = getElement("#change-val3");
-const changeValInMonth = getElement("#change-val4");
-const changeOldVal = getElement("#change-val5");
-const changediscountVal = getElement("#change-val6");
+createCards(products);
 
 let arr = [];
 elWrapper.addEventListener("click", (evt) => {
-  if (evt.target.className === "hero__one-top-img") {
-    console.log(evt.target);
-    const id = Number(evt.target.dataset.id);
-    arr.length = 0;
+  if (evt.target.className.includes("hero__one-center-img")) {
+    const id = evt.target.dataset.id;
+    localStorage.setItem("id", id);
 
-    uzum.forEach((card) => {
-      if (card.id === id) {
-        card.heartIsFavorite = !card.heartIsFavorite;
-      }
-      if (card.heartIsFavorite) {
-        arr.push(card);
-      }
-    });
-    localStorage.setItem("products", JSON.stringify(uzum));
-    console.log(arr);
-    createCards(uzum);
-    // createIsFavorite(arr, menu);
-  }
-
-  if (evt.target.className.includes("add-item")) {
-    const id = +evt.target.dataset.id;
-    console.log(id);
-    const product = uzum.filter((product) => product.id === id)[0];
-
-    changeTitle.value = product.title;
-    changeImg.value = product.img;
-    changeOldVal.value = product.oldValue;
-    changediscountVal.value = product.bargainValue;
-    changeValInMonth.value = product.inMonth;
-
-    addSaveChanges.addEventListener("click", () => {
-      uzum.forEach((product) => {
-        if (product.id === id) {
-          product.title = changeTitle.value;
-          product.img = changeImg.value;
-          product.oldValue = changeOldVal.value;
-          product.bargainValue = changediscountVal.value;
-          product.inMonth = changeValInMonth.value;
-        }
-
-        // elFormEdit.reset();
-      });
-      localStorage.setItem("products", JSON.stringify(uzum));
-      createCards(uzum);
-    });
-  }
-  if (evt.target.className.includes("deleate-btn")) {
-    const id = Number(evt.target.dataset.id);
-    const delArr = uzum.filter((item) => {
-      return item.id !== id;
-    });
-
-    localStorage.setItem("products", JSON.stringify(delArr));
-    createCards(uzum);
+    window.location.replace(
+      `http://127.0.0.1:5500/Uzum.uz/product.html?id=${id}`
+    );
   }
 });

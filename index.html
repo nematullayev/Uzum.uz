@@ -13,7 +13,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./scss/main.css" />
+    <link rel="stylesheet" href="./scss/main.css  " />
     <title>Uzum Market</title>
     <link
       class="fav"
@@ -101,14 +101,32 @@
 
           <div class="header__top-end">
             <ul class="header__top-end-list">
-              <li id="li1">
-                <button class="header__top-end-item">
+              <li
+                id="li1"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                <button id="login" class="header__top-end-item">
                   <img
                     class="header__top-end-item-img"
                     src="./assets/images/person.svg"
                     alt="person"
                   />
                   <p>Kirish</p>
+                  <!-- Button trigger modal -->
+
+                  <!-- Modal -->
+                </button>
+              </li>
+              <li id="isLogin" style="display: flex; gap: 10px; display: none">
+                <a href="./admin.html">Admin</a>
+                <button id="logout" class="header__top-end-item">
+                  <img
+                    class="header__top-end-item-img"
+                    src="./assets/images/person.svg"
+                    alt="person"
+                  />
+                  <p>Chiqish</p>
                 </button>
               </li>
               <li id="li2">
@@ -149,7 +167,7 @@
         </div>
         <div class="header__bottom swiper">
           <strong class="cat">Catigories:</strong>
-          <ul id="catigories" class="header__bottom-list">
+          <!-- <ul id="catigories" class="header__bottom-list">
             <div class="header__bottom-slide swiper-wrapper">
               <li class="header__bottom-item">
                 <button
@@ -247,17 +265,6 @@
                   <p>Aksessuarlar</p>
                 </button>
               </li>
-              <!-- <li class="header__bottom-item">
-                <button
-                  style="color: #74767e"
-                  id="header__bottom-item-btn"
-                  class="header__bottom-item-btn swiper-slide"
-                >
-                  <p>G'ozalik</p>
-                  <span>va</span>
-                  <span>parvarish</span>
-                </button>
-              </li> -->
               <li class="header__bottom-item">
                 <button
                   style="color: #74767e"
@@ -272,7 +279,7 @@
                 </button>
               </li>
             </div>
-          </ul>
+          </ul> -->
           <button class="all">All</button>
         </div>
       </header>
@@ -546,6 +553,59 @@
           «2024© XK MCHJ «UZUM MARKET». STIR 309376127. Barcha huquqlar
           himoyalangan»
         </p>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Enter your Username and password
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <input
+              id="username"
+              type="text"
+              class="form-control"
+              placeholder="Username"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            />
+            <input
+              id="password"
+              type="password"
+              class="form-control mt-3"
+              placeholder="Password"
+              aria-label="Password"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button id="save" type="button" class="btn btn-primary">
+              Save changes
+            </button>
+          </div>
+        </div>
       </div>
     </div>
     <div class="mobile__footer-wrapper">
