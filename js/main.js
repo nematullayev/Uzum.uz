@@ -1,100 +1,10 @@
 function getElement(select, selector = document) {
   return selector.querySelector(select);
 }
-const uzum = localStorage.getItem("products")
-  ? JSON.parse(localStorage.getItem("products"))
-  : [
-      {
-        id: 1,
-        img: "./assets/images/sams.png",
-        title: "Samsung Galaxy S10+ Q8/256 Awesome Navy Smartfoni",
-        score: "5.0 (22 ta sharh)",
-        inMonth: "408 216 s'om/oyiga",
-        oldValue: "4 900 000 s'om",
-        bargainValue: "4 849 000 s'om",
-        moreThan: "24",
-        heartIsFavorite: false,
-      },
-      {
-        id: 2,
-        img: "./assets/images/oil.png",
-        title: "Kungaboqar yog'i ,tozalangan va xidsizlantirilgan",
-        score: "4.9 (4092 sharsh)",
-        inMonth: "1 560 s'om/oyiga",
-        oldValue: "15 000 s'om",
-        bargainValue: "13 000 s'om",
-        moreThan: "90",
-        heartIsFavorite: false,
-      },
-      {
-        id: 3,
-        img: "./assets/images/redmi.png",
-        title: "Smartfon Xiaomi Redmi Note 13,6/128 GB, 8/128 GB, 8/256GB,…",
-        score: "5.0 (8 sharsh)",
-        inMonth: "299 880 s'om/oyiga",
-        oldValue: "3 010 000 s'om",
-        bargainValue: "2 490  000 s'om",
-        moreThan: "3",
-        heartIsFavorite: false,
-      },
-      {
-        id: 4,
-        img: "./assets/images/family.png",
-        title: "Kir yuvish kukuni Oila tanlovi Ayoztazeligi, avtomat, 3 kg",
-        score: "4.5 (123 ta sharh)",
-        inMonth: "4 290 s'om/oyiga",
-        oldValue: "57 s'om",
-        bargainValue: "41 s'om",
-        moreThan: "456",
-        heartIsFavorite: false,
-      },
-      {
-        id: 5,
-        img: "./assets/images/tv.png",
-        title: "Televizor Samsung Crystal UHD 4K43, 50, 55, 65 CU7100 Smart TV",
-        score: "5.0 (5 ta sharh)",
-        inMonth: "587 880 s'om/oyiga",
-        oldValue: "5 830 000 s'om",
-        bargainValue: "4 890 000 s'om",
-        moreThan: "34",
-        heartIsFavorite: false,
-      },
-      {
-        id: 6,
-        img: "./assets/images/krasofka.png",
-        title: "Erkaklar uchun krossovka Jomar.vitaly men 2201 black",
-        score: "5.0 (20 ta sharh)",
-        inMonth: "41 880 s'om/oyiga",
-        oldValue: "687 000 s'om",
-        bargainValue: "349 000 s'om",
-        moreThan: "3240",
-        heartIsFavorite: false,
-      },
-      {
-        id: 7,
-        img: "./assets/images/laptop.png",
-        title: "Noutbuk HP AMD Ryzen 7-5825U,DDR4 16GB SSD 512GB",
-        score: "5.0 (1 ta sharh)",
-        inMonth: "864 000 s'om/oyiga",
-        oldValue: "8 200 000 s'om",
-        bargainValue: "7 200 000 s'om",
-        moreThan: "324",
-        heartIsFavorite: false,
-      },
-      {
-        id: 8,
-        img: "./assets/images/himoya.png",
-        title: "Sport va raqs uchun tizzalar,voleybol basketboli uchun .",
-        score: "4.8 (21 ta sharh)",
-        inMonth: "14 160 s'om/oyiga",
-        oldValue: "200 000 s'om",
-        bargainValue: "118 000 s'om",
-        moreThan: "324",
-        heartIsFavorite: false,
-      },
-    ];
 
 // localStorage.setItem("products", JSON.stringify(uzum));
+
+const BASIC_URL = "https://66cc9ebfa4dd3c8a71b84178.mockapi.io/api";
 
 const elWrapper = getElement(".hero");
 const template = getElement("template");
@@ -116,6 +26,7 @@ const all = document.querySelector(".all");
 const elLogin = getElement("#login");
 const elIsLogin = getElement("#isLogin");
 const elIsLogOut = getElement("#logout");
+const done = getElement("#done");
 
 elIsLogOut.addEventListener("click", () => {
   localStorage.removeItem("token");
@@ -125,14 +36,15 @@ elIsLogOut.addEventListener("click", () => {
 
 let products = [];
 
-fetch("https://fakestoreapi.com/products")
+fetch(BASIC_URL + `/products`)
   .then((res) => res.json())
   .then((json) => {
     products = json;
     createCards(products);
+    done.style.display = "none";
   });
 
-fetch("https://fakestoreapi.com/products/categories")
+fetch("https://fakestoreapi.com/products/categories/")
   .then((res) => res.json())
   .then((json) => {
     catigories.textContent = "";
@@ -233,6 +145,7 @@ function createCards(items) {
     const inMonth = getElement(".hero__one-second-center-p", newEl);
     const oldValue = getElement(".hero__one-bootom-sum", newEl);
     const bargainValue = getElement(".hero__one-bootom-title", newEl);
+    const how = getElement(".how", newEl);
     const elHeart = getElement("#heart", newEl);
 
     elHeart.dataset.id = item.id;
@@ -243,15 +156,15 @@ function createCards(items) {
     topImg.src = item.image;
     topImg.dataset.id = item.id;
     title.textContent = item.title;
-    score.textContent = item.rating;
+    how.textContent = item.comments;
+    score.textContent = item.raiting;
     inMonth.textContent = item.category;
-    // oldValue.textContent = item.oldValue;
-    bargainValue.textContent = item.price;
+    oldValue.textContent = item.price / 2 + `   so'm`;
+    bargainValue.textContent = item.price + `  so'm`;
 
     elWrapper.appendChild(newEl);
   });
 }
-createCards(uzum);
 
 let arr = [];
 elWrapper.addEventListener("click", (evt) => {

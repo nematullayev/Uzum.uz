@@ -263,11 +263,13 @@ ul {
   margin-bottom: 100px;
 }
 .hero__one-center-img {
-  width: 200px;
+  min-width: 100%;
+  min-height: 100%;
+  border-radius: 10px;
 }
 .hero__one-center-img:hover {
   transition: all 0.2s linear;
-  transform: scale(1.09);
+  transform: scale(1.05);
 }
 .hero__one-bootom-img {
   width: 30px;
@@ -277,10 +279,10 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-bottom: 20px;
 }
 .hero__one-top {
   position: relative;
-  padding: 30px 20px;
   border-radius: 8px;
   background-color: #efefef;
   height: 300px;
@@ -304,7 +306,14 @@ ul {
   align-items: start;
   gap: 10px;
 }
+.hero__one-second-center1-p, .hero__one-second-center2-p {
+  margin-bottom: 0;
+}
+.hero__one-second-center {
+  align-items: start;
+}
 .hero__one-center-title {
+  padding-top: 10px;
   font-size: 16px;
   color: #3b3c41;
   font-size: 16px;

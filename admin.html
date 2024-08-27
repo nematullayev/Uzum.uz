@@ -9,7 +9,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./css/main.min.css" />
+    <link rel="stylesheet" href="./scss/main.css" />
     <title>Uzum-Admin</title>
   </head>
   <body>
@@ -326,23 +326,30 @@
           Save
         </button>
       </section>
-      <section class="hero container">
+      <div
+        style="display: block; width: 100px; height: 100px; margin: 0 auto"
+        class="spinner-border"
+        id="done"
+        role="status"
+      >
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <section class="hero">
         <template
           ><div class="hero__card">
             <div class="hero__one-top">
-              <div class="hero__one-top-2">
-                <img
-                  id="heart"
-                  class="hero__one-top-img"
-                  src="./assets/images/heart.svg"
-                  alt="1"
-                />
-                <img
-                  class="hero__one-center-img"
-                  src="./assets/images/sams.png"
-                  alt=""
-                />
-              </div>
+              <img
+                id="heart"
+                class="hero__one-top-img"
+                src="./assets/images/heart.svg"
+                alt="1"
+              />
+              <img
+                style="width: 70%; cursor: pointer"
+                class="hero__one-center-img"
+                src="./assets/images/sams.png"
+                alt=""
+              />
               <div class="hero__one-top-botom">
                 <button id="catigories-card" class="hero__one-top-botom-btn">
                   Eksklyuziv
@@ -350,24 +357,25 @@
               </div>
             </div>
             <div class="hero__one-center">
-              <p class="hero__one-center-title">
-                Samsung Galaxy S10+ Q8/256 Awesome Navy Smartfoni
-              </p>
+              <p class="hero__one-center-title"></p>
             </div>
             <div class="hero__one-second-center">
               <div class="hero__one-second-center1">
                 <img src="./assets/images/star-fill.svg" alt="" />
 
-                <p class="hero__one-second-center1-p">5.0 (22 ta sharh)</p>
+                <p class="hero__one-second-center1-p"></p>
+                <p class="hero__one-second-center2-p">
+                  (<span class="how"></span> ta sharh)
+                </p>
               </div>
               <div class="hero__one-second-center2">
-                <p class="hero__one-second-center-p">408 216 s'om/oyiga</p>
+                <p class="hero__one-second-center-p"></p>
               </div>
             </div>
             <div class="hero__one-bootom">
               <div>
-                <p class="hero__one-bootom-sum">4 900 000</p>
-                <h3 class="hero__one-bootom-title">4 849 000 s'om</h3>
+                <p class="hero__one-bootom-sum"></p>
+                <h3 class="hero__one-bootom-title"></h3>
               </div>
               <div>
                 <img
@@ -377,37 +385,102 @@
                 />
               </div>
             </div>
-            <div
-              id="e-d"
-              style="
-                display: flex;
-                gap: 10px;
-                justify-content: center;
-                margin-top: 20px;
-              "
-              class=""
-            >
+            <div class="del-add">
+              <button id="deleate-btn" class="btn btn-danger">Deleate</button>
               <button
                 id="edit-btn"
-                style="border: none; padding: 5px 15px"
-                class="add-item bg-info text-light"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
+                class="btn btn-info"
               >
                 Edit
               </button>
-              <button
-                class="deleate-btn"
-                style="
-                  border: none;
-                  padding: 5px 15px;
-                  background-color: red;
-                  color: white;
-                "
-                class="bg-info text-light"
+
+              <!-- Modal -->
+              <div
+                class="modal fade"
+                id="exampleModal"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
               >
-                Deleate
-              </button>
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">
+                        Modal title
+                      </h1>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="form" action="">
+                        <input
+                          name="img"
+                          type="text"
+                          class="form-control mb-3"
+                          placeholder="Add image"
+                          aria-label="Username"
+                          aria-describedby="addon-wrapping"
+                        />
+                        <input
+                          name="title"
+                          type="text"
+                          class="form-control mb-3"
+                          placeholder="Add Title"
+                          aria-label="Username"
+                          aria-describedby="addon-wrapping"
+                        />
+                        <input
+                          name="raiting"
+                          type="text"
+                          class="form-control mb-3"
+                          placeholder="Add image"
+                          aria-label="Username"
+                          aria-describedby="addon-wrapping"
+                        />
+                        <input
+                          name="oldValue"
+                          type="text"
+                          class="form-control mb-3"
+                          placeholder="Add Old Value"
+                          aria-label="Username"
+                          aria-describedby="addon-wrapping"
+                        />
+                        <input
+                          name="discountValue"
+                          type="text"
+                          class="form-control mb-3"
+                          placeholder="Add Discount Value"
+                          aria-label="Username"
+                          aria-describedby="addon-wrapping"
+                        />
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                      <button
+                        id="saveAll"
+                        type="button"
+                        data-bs-dismiss="modal"
+                        class="btn btn-primary"
+                      >
+                        Save changes
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </template>
