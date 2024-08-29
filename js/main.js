@@ -170,10 +170,7 @@ let arr = [];
 elWrapper.addEventListener("click", (evt) => {
   if (evt.target.className.includes("hero__one-center-img")) {
     const id = evt.target.dataset.id;
-    localStorage.setItem("id", id);
 
-    window.location.replace(
-      `http://127.0.0.1:5500/Uzum.uz/product.html?id=${id}`
-    );
+    window.location.replace(`./product.html?id=${id}`);
   }
 });

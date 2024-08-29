@@ -2,12 +2,12 @@
   display: flex;
   gap: 100px;
   margin-top: 50px;
-  justify-content: center;
+  justify-content: space-between;
   &__left-img {
     width: 350px;
   }
   &__right {
-    max-width: 1000px;
+    width: 100%;
   }
   &__right-top {
     padding-left: 0;
@@ -94,6 +94,9 @@
     border-radius: 5px;
     padding: 5px 10px;
   }
+}
+#last-img {
+  height: 100%;
 }
 #one-product__right-top-left-raiting {
   margin-bottom: 0;

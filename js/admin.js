@@ -15,7 +15,7 @@ const token = localStorage.getItem("token");
 const done = getElement("#done");
 
 if (!token) {
-  window.location.replace("http://127.0.0.1:5500/Uzum.uz/index.html");
+  window.location.replace("./index.html");
 }
 
 const elWrapper = getElement(".hero");
@@ -96,9 +96,7 @@ elWrapper.addEventListener("click", (evt) => {
     const id = evt.target.dataset.id;
     localStorage.setItem("id", id);
 
-    window.location.replace(
-      `http://127.0.0.1:5500/Uzum.uz/product.html?id=${id}`
-    );
+    window.location.replace(`./product.html?id=${id}`);
   }
   const elForm = document.querySelector("#form");
   if (evt.target.className.includes("btn btn-info")) {

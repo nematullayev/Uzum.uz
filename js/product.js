@@ -21,15 +21,15 @@ const elDescription = document.querySelector(".description");
 let params = new URLSearchParams(document.location.search);
 let id = params.get("id"); // is the string "Jonathan"
 
-fetch(BASIC_URL + `/products` + `${id}`)
+fetch(BASIC_URL + `/products/${id}`)
   .then((res) => res.json())
   .then((json) => {
     oneTopImg.src = json.image;
-    oneRaiting.textContent = json;
-    oneOrder.textContent = json.nm;
+    oneRaiting.textContent = json.raiting;
+    oneOrder.textContent = json.comments;
     oneTitle.textContent = json.title;
-    oneDiscountPrice.textContent = json.price;
-    oneRealPrice.textContent = json.oldValue;
+    oneDiscountPrice.textContent = json.price + "   so'm";
+    oneRealPrice.textContent = json.price * 2 + "   so'm";
     elDescription.textContent = json.description;
     console.log(json);
   });

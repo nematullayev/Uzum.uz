@@ -281,6 +281,11 @@ ul {
   gap: 10px;
   margin-bottom: 20px;
 }
+.hero__card:hover {
+  cursor: pointer;
+  box-shadow: -1px 1px 8px 1px rgba(34, 60, 80, 0.18);
+  border-radius: 10px;
+}
 .hero__one-top {
   position: relative;
   border-radius: 8px;
@@ -661,13 +666,13 @@ ul {
   display: flex;
   gap: 100px;
   margin-top: 50px;
-  justify-content: center;
+  justify-content: space-between;
 }
 .one-product__left-img {
   width: 350px;
 }
 .one-product__right {
-  max-width: 1000px;
+  width: 100%;
 }
 .one-product__right-top {
   padding-left: 0;
@@ -753,6 +758,10 @@ ul {
   color: white;
   border-radius: 5px;
   padding: 5px 10px;
+}
+
+#last-img {
+  height: 100%;
 }
 
 #one-product__right-top-left-raiting {
